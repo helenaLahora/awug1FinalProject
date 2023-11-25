@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import React, { useState } from 'react';
+import ObjectList from './components/ObjectList';
+import PersonList from './components/PersonList';
+import ExhibitionList from './components/ExhibitionList';
+import SearchResults from './components/SearchResults';
+import SearchForm from './components/SearchForm';
 
 function App() {
+  const [searchKeyword, setSearchKeyword] = useState('');
+
+  const handleSearch = (keyword) => {
+    setSearchKeyword(keyword);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Harvard Art Museums API Data</h1>
+
+      {/* Search Form */}
+      <SearchForm onSearch={handleSearch} />
+
+      {/* Display Lists */}
+      <ObjectList />
+      <PersonList />
+      <ExhibitionList />
+
+      {/* Display Search Results */}
+      <SearchResults searchKeyword={searchKeyword} />
     </div>
   );
 }
