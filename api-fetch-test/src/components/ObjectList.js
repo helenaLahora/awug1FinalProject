@@ -7,20 +7,34 @@ function ObjectList() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+      fetchData();
+    }, []);
+  
     const fetchData = async () => {
       try {
-        const response = await fetch(generateApiUrl('object', { size: 5, page: 1 }));
-        const jsonData = await response.json();
-        setObjects(jsonData.records);
+        // Construct the API endpoint URL
+        const url = generateApiUrl('object');
+        console.log(url);
+  
+        const response = await fetch(url);
+        const rawData = await response.json();
+  
+        // Transform the raw rawData into a simplified list
+        const cleanData = rawData.records.map((object) => ({
+          id: object.id,
+          name: object.name,
+          temporalOrder: object.temporalOrder,
+          objectCount: object.objectCount,
+        }));
+  
+        // Set the object list in the state
+        setObjects(cleanData);
       } catch (error) {
-        console.error('Error fetching object data:', error);
+        console.error(error);
       } finally {
         setLoading(false);
       }
     };
-
-    fetchData();
-  }, []);
 
   return (
     <div>

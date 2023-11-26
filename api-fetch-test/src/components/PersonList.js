@@ -11,6 +11,7 @@ function PersonList() {
       try {
         const response = await fetch(generateApiUrl('person', { size: 5, page: 1 }));
         const jsonData = await response.json();
+        console.log(jsonData);
         setPeople(jsonData.records);
       } catch (error) {
         console.error('Error fetching person data:', error);
