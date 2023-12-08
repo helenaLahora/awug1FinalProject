@@ -1,0 +1,19 @@
+src/
+├── components/
+│   ├── common/
+│   │   ├── Header.js
+│   │   ├── Navbar.js
+│   │   ├── Footer.js
+│   │   ├── Pagination.js
+│   │   ├── SearchFilter.js
+│   │   └── SearchBox.js
+│   ├── characters/
+│   │   ├── CharacterList.js
+│   │   ├── SearchCharacters.js
+│   │   └── CharacterDetail.js
+├── views/
+│   ├── Home.js
+│   ├── SearchPage.js
+│   └── CharacterDetailPage.js
+├── App.js
+└── index.js
