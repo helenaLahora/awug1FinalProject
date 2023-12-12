@@ -4,12 +4,16 @@ import CharacterCard from './CharacterCard';
 import SearchFilter from '../common/SearchFilter';
 import Pagination from '../common/Pagination';
 
+/**
+ * Component for searching Disney characters based on user input.
+ * Allows users to input search criteria and displays the filtered list.
+ */
 const SearchCharacters = () => {
   const [searchCriteria, setSearchCriteria] = useState('');
   const [filteredCharacters, setFilteredCharacters] = useState([]);
   const [ascendingOrder, setAscendingOrder] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(1);
+  const [info, setInfo] = useState({ totalPages: 1 });
 
   useEffect(() => {
     const fetchData = async () => {
@@ -22,8 +26,10 @@ const SearchCharacters = () => {
         );
         const data = await response.json();
 
-        // Update total pages based on the API response
-        setTotalPages(data.totalPages);
+        // Update total pages and pagination info based on the API response
+        setInfo({
+          totalPages: data.info.totalPages,
+        });
 
         // Concatenate characters from the current page to the existing list
         allCharacters = data.data;
@@ -55,15 +61,15 @@ const SearchCharacters = () => {
     setCurrentPage(page);
   };
 
-  // Use setSearchCriteria somewhere in your component, for example:
   const handleSearchInputChange = (event) => {
     setSearchCriteria(event.target.value);
   };
 
   return (
     <div>
-      <h2>Search Characters</h2>
+      {/* Order data by name */}
       <SearchFilter onOrderChange={handleOrderChange} />
+
       {/* Add an input for search criteria */}
       <input
         type="text"
@@ -71,16 +77,17 @@ const SearchCharacters = () => {
         onChange={handleSearchInputChange}
         placeholder="Search by name"
       />
+
+      {/* Render filtered results */}
       <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+        {/* Create character cards */}
         {filteredCharacters.map((character) => (
           <CharacterCard key={character._id} character={character} />
         ))}
       </div>
-      <Pagination
-        totalPages={totalPages}
-        currentPage={currentPage}
-        onPageChange={handlePageChange}
-      />
+
+      {/* Sending info on current fetched data */}
+      <Pagination info={info} onPageChange={handlePageChange} />
     </div>
   );
 };

@@ -4,16 +4,20 @@ src/
 │   │   ├── Header.js
 │   │   ├── Navbar.js
 │   │   ├── Footer.js
-│   │   ├── Pagination.js
-│   │   ├── SearchFilter.js
+│   │   ├── Pagination.js       ***
+│   │   ├── SearchFilter.js     ***
 │   │   └── SearchBox.js
-│   ├── characters/
-│   │   ├── CharacterList.js
-│   │   ├── SearchCharacters.js
-│   │   └── CharacterDetail.js
+│   ├── specific/
+│   │   ├── List.json           ***
+│   │   ├── Search.js           ***
+│   │   ├── FilmDetail.js       ***
+│   │   ├── PeopleDetail.js     ***
+│   │   ├── LocationDetail.js   ***
+│   │   ├── SpecieDetail.js     ***
+│   │   └── VehicleDetail.json  ***
 ├── views/
 │   ├── Home.js
 │   ├── SearchPage.js
-│   └── CharacterDetailPage.js
+│   └── DetailPage.js           ***
 ├── App.js
 └── index.js

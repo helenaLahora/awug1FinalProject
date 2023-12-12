@@ -1,7 +1,12 @@
 // components/common/Pagination.js
 import React from 'react';
 
-const Pagination = ({ totalPages, currentPage, onPageChange }) => {
+/**
+ * Break up large amounts of content into manageable chunks, making it easier for users to navigate and find characters.
+ */
+const Pagination = ({ info, onPageChange }) => {
+  const { totalPages } = info;
+
   const renderPaginationLinks = () => {
     const links = [];
     for (let i = 1; i <= totalPages; i++) {
@@ -11,7 +16,6 @@ const Pagination = ({ totalPages, currentPage, onPageChange }) => {
           style={{
             cursor: 'pointer',
             marginRight: '5px',
-            fontWeight: i === currentPage ? 'bold' : 'normal',
           }}
           onClick={() => onPageChange(i)}
         >

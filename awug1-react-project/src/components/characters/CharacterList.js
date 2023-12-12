@@ -4,11 +4,15 @@ import CharacterCard from './CharacterCard';
 import SearchFilter from '../common/SearchFilter';
 import Pagination from '../common/Pagination';
 
+/**
+ * Displays a list of Disney characters retrieved from the API.
+ * Responsible for fetching data and rendering the list.
+ */
 const CharacterList = () => {
   const [characters, setCharacters] = useState([]);
   const [ascendingOrder, setAscendingOrder] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(1);
+  const [info, setInfo] = useState({ totalPages: 1 });
 
   useEffect(() => {
     const fetchData = async () => {
@@ -21,8 +25,10 @@ const CharacterList = () => {
         );
         const data = await response.json();
 
-        // Update total pages based on the API response
-        setTotalPages(data.totalPages);
+        // Update total pages and pagination info based on the API response
+        setInfo({
+          totalPages: data.info.totalPages,
+        });
 
         // Concatenate characters from the current page to the existing list
         allCharacters = data.data;
@@ -56,18 +62,19 @@ const CharacterList = () => {
 
   return (
     <div>
-      <h2>All Characters</h2>
+      {/* Order data by name */}
       <SearchFilter onOrderChange={handleOrderChange} />
+
+      {/* Render filtered results */}
       <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+        {/* Create character cards */}
         {characters.map((character) => (
           <CharacterCard key={character._id} character={character} />
         ))}
       </div>
-      <Pagination
-        totalPages={totalPages}
-        currentPage={currentPage}
-        onPageChange={handlePageChange}
-      />
+
+      {/* Sending info on current fetched data */}
+      <Pagination info={info} onPageChange={handlePageChange} />
     </div>
   );
 };
