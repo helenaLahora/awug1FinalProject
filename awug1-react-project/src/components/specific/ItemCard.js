@@ -9,7 +9,8 @@ import { Link } from 'react-router-dom';
  */
 const ItemCard = ({ film }) => {
   return (
-    <Link to={`/item/${film.id}`}>
+    // Use the Link component to navigate to the film detail page
+    <Link to={`/detail/${film.id}`}>
       <div style={{ border: '1px solid #ccc', padding: '10px', margin: '10px', cursor: 'pointer' }}>
         {/* Display film image */}
         {film.image ? (
