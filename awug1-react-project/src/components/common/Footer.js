@@ -9,7 +9,7 @@ const Footer = () => {
   return (
     <div>
       {/* Add footer content as needed */}
-      <p>&copy; 2023 Disney Character Explorer</p>
+      <p>&copy;Helena Lahora & Yun Solá</p>
     </div>
   );
 };

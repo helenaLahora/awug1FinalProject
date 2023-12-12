@@ -17,8 +17,6 @@ const SearchFilter = ({ onOrderChange }) => {
 
   return (
     <div>
-      {/* Heading for the search filter component */}
-      <h3>Order By</h3>
       {/* Buttons for ordering */}
       <button onClick={handleOrderToggle}>A to Z</button>
     </div>

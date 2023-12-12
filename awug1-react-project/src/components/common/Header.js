@@ -8,7 +8,7 @@ import React from 'react';
 const Header = () => {
   return (
     <div>
-      <h1>Disney Character Explorer</h1>
+      <h1>Ghibli Studios</h1>
     </div>
   );
 };

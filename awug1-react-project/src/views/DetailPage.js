@@ -1,22 +1,22 @@
-// views/Home.js
+// views/DetailPage.js
 import React from 'react';
-import ListFilms from '../components/specific/ListFilms';
 import Footer from '../components/common/Footer';
 import Header from '../components/common/Header';
 import Navbar from '../components/common/Navbar';
+import Detail from '../components/specific/DetailFilm';
 
 /**
- * Home view that displays a list of Disney Films.
+ * DetailPage view that displays detailed information about a specific item.
  */
-const Home = () => {
+const DetailPage = () => {
   return (
     <div>
       <Header />
       <Navbar />
-      <ListFilms />
+      <Detail />
       <Footer />
     </div>
   );
 };
 
-export default Home;
+export default DetailPage;
