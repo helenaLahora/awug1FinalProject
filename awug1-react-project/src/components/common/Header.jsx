@@ -1,4 +1,4 @@
-// components/common/Header.js
+// components/common/Header.jsx
 import React from 'react';
 
 /**

@@ -1,4 +1,4 @@
-// components/specific/ListFilms.js
+// components/specific/ListFilms.jsx
 import React, { useState, useEffect, useCallback } from 'react';
 import ItemCard from './ItemCard';
 import SearchFilter from '../common/SearchFilter';

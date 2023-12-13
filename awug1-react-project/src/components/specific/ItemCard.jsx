@@ -1,4 +1,4 @@
-// components/specific/ItemCard.js
+// components/specific/ItemCard.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
 

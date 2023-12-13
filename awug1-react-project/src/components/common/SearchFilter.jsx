@@ -1,4 +1,4 @@
-// components/common/SearchFilter.js
+// components/common/SearchFilter.jsx
 import React, { useState } from 'react';
 
 /**
@@ -18,7 +18,7 @@ const SearchFilter = ({ onOrderChange }) => {
   return (
     <div>
       {/* Buttons for ordering */}
-      <button onClick={handleOrderToggle}>A to Z</button>
+      <button onClick={handleOrderToggle}>Order</button>
     </div>
   );
 };

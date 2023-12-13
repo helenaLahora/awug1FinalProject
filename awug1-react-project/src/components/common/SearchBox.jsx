@@ -1,4 +1,4 @@
-// components/common/SearchBox.js
+// components/common/SearchBox.jsx
 import React, { useState } from 'react';
 
 const SearchBox = ({ onSearch }) => {

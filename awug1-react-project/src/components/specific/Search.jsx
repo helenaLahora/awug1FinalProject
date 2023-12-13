@@ -1,4 +1,4 @@
-// components/specific/Search.js
+// components/specific/Search.jsx
 import React, { useState, useEffect, useCallback } from 'react';
 import ItemCard from './ItemCard';
 import SearchBox from '../common/SearchBox';
@@ -23,6 +23,7 @@ const Search = () => {
       })
       .then((data) => {
         // Sort films based on the order (ascending or descending)
+        console.log(data);
         const sortedFilms = data.slice().sort((a, b) => {
           const titleA = a?.title?.toUpperCase() || '';
           const titleB = b?.title?.toUpperCase() || '';
@@ -60,7 +61,6 @@ const Search = () => {
     setFilteredFilms(sortedFilms);
   };
 
-  // Function to handle search based on user input
 // Function to handle search based on user input
 const handleSearch = (filters) => {
   // Log the applied filters to the console for debugging

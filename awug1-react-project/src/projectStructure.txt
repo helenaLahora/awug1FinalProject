@@ -1,24 +1,24 @@
 src/
 ├── components/
 │   ├── common/
-│   │   ├── Header.js
-│   │   ├── Navbar.js
-│   │   ├── Footer.js
-│   │   ├── Pagination.js
-│   │   ├── SearchFilter.js
-│   │   └── SearchBox.js
+│   │   ├── Header.jsx
+│   │   ├── Navbar.jsx
+│   │   ├── Footer.jsx
+│   │   ├── Pagination.jsx
+│   │   ├── SearchFilter.jsx
+│   │   └── SearchBox.jsx
 │   ├── specific/
-│   │   ├── ItemCard.js
-│   │   ├── List.js
-│   │   ├── Search.js
-│   │   ├── FilmDetail.js
-│   │   ├── PeopleDetail.js
-│   │   ├── LocationDetail.js
-│   │   ├── SpecieDetail.js
-│   │   └── VehicleDetail.js
+│   │   ├── ItemCard.jsx
+│   │   ├── ListFilms.jsx
+│   │   ├── Search.jsx
+│   │   ├── DetailFilm.jsx
+│   │   ├── DetailPeople.jsx
+│   │   ├── DetailLocation.jsx
+│   │   ├── DetailSpecie.jsx
+│   │   └── DetailVehicle.jsx
 ├── views/
-│   ├── Home.js
-│   ├── SearchPage.js
-│   └── DetailPage.js
-├── App.js
-└── index.js
+│   ├── Home.jsx
+│   ├── SearchPage.jsx
+│   └── DetailPage.jsx
+├── App.jsx
+└── index.jsx
