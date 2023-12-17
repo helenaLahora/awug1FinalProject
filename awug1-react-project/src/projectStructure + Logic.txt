@@ -1,0 +1,30 @@
+src/
+├── components/
+│   ├── common/
+│   │   ├── AlterResults.jsx
+│   │   ├── AlterResultsFilter.jsx
+│   │   ├── AlterResultsView.jsx
+│   │   ├── Button.jsx
+│   │   ├── Card.jsx "endpoint","id"
+│   │   ├── CardImage.jsx "endpoint","id"
+│   │   ├── Checkbox.jsx
+│   │   ├── Dropdown.js
+│   │   └── SearchForm.jsx
+│   ├── common/
+│   │   ├── Carroussel.jsx "endpoint","cardType"
+│   │   ├── CarrousselImages.jsx "endpoint","cardType"
+│   │   ├── Detail.jsx "endpoint","id"
+│   │   ├── DetailImage.jsx "endpoint","id"
+│   │   ├── Footer.jsx
+│   │   ├── HeaderCategory.jsx "endpoint"
+│   │   ├── HeaderPage.jsx
+│   │   ├── Navbar.jsx
+│   │   ├── Results.jsx
+│   │   ├── SearchGeneral.jsx "endpoint"
+│   │   └── SearchSpecific.jsx "endpont"
+├── views/
+│   ├── Home.jsx
+│   ├── Search.jsx
+│   └── Detail.jsx
+├── App.jsx
+└── index.jsx
