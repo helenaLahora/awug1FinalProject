@@ -182,7 +182,7 @@
         "title":"People",
         "url": "https://ghibliapi.vercel.app/people",
         "icon": "assets/icons/Type=People, State=Default, Size=45.png",
-        "cardType":"CardText",
+        "cardType":"Card",
         "inputGroups": [
           {
             "type": "text",
@@ -225,20 +225,19 @@
                 "label": "Eye Color",
                 "value": "",
                 "options": [
-                  {"value": "Green", "label": "Green"},
                   {"value": "Black", "label": "Black"},
-                  {"value": "Dark brown", "label": "Dark brown"},
-                  {"value": "Dark brown/Black", "label": "Dark brown/Black"},
-                  {"value": "Brown", "label": "Brown"},
-                  {"value": "Hazel", "label": "Hazel"},
-                  {"value": "Grey", "label": "Grey"},
-                  {"value": "Red", "label": "Red"},
-                  {"value": "Yellow", "label": "Yellow"},
-                  {"value": "White", "label": "White"},
-                  {"value": "Emerald", "label": "Emerald"},
                   {"value": "Blue", "label": "Blue"},
-                  {"value": "Cyan", "label": "Cyan"}
-                  
+                  {"value": "Brown", "label": "Brown"},
+                  {"value": "Cyan", "label": "Cyan"},
+                  {"value": "Dark brown", "label": "Dark Brown"},
+                  {"value": "Dark brown/Black", "label": "Dark Brown/Black"},
+                  {"value": "Emerald", "label": "Emerald"},
+                  {"value": "Green", "label": "Green"},
+                  {"value": "Grey", "label": "Grey"},
+                  {"value": "Hazel", "label": "Hazel"},
+                  {"value": "Red", "label": "Red"},
+                  {"value": "White", "label": "White"},
+                  {"value": "Yellow", "label": "Yellow"}
                 ],
                 "onChange": "handleEyeColorChange"
               },
@@ -248,26 +247,25 @@
                 "label": "Hair Color",
                 "value": "",
                 "options": [
-                  {"value": "Green", "label": "Green"},
-                  {"value": "Brown", "label": "Brown"},
-                  {"value": "Dirty Blond", "label": "Dirty Blonde"},
-                  {"value": "Blonde", "label": "Blonde"},
+                  {"value": "Beige", "label": "Beige"},
                   {"value": "Black", "label": "Black"},
-                  {"value": "Peach", "label": "Peach"},
+                  {"value": "Blonde", "label": "Blonde"},
+                  {"value": "Blue", "label": "Blue"},
+                  {"value": "Brown", "label": "Brown"},
+                  {"value": "Dark brown", "label": "Dark brown"},
+                  {"value": "Dirty Blond", "label": "Dirty Blonde"},
+                  {"value": "Green", "label": "Green"},
                   {"value": "Grey", "label": "Grey"},
+                  {"value": "Light brown", "label": "Light brown"},
                   {"value": "Light gray", "label": "Light Grey"},
+                  {"value": "Light Orange", "label": "Light Orange"},
+                  {"value": "Orange", "label": "Orange"},
+                  {"value": "Peach", "label": "Peach"},
                   {"value": "Red", "label": "Red"},
                   {"value": "Reddish brown", "label": "Reddish Brown"},
-                  {"value": "White", "label": "White"},
-                  {"value": "Dark brown", "label": "Dark brown"},
-                  {"value": "Light brown", "label": "Light brown"},
-                  {"value": "Beige", "label": "Beige"},
                   {"value": "Reddish brown", "label": "Reddish brown"},
-                  {"value": "Orange", "label": "Orange"},
-                  {"value": "Yellow", "label": "Yellow"},
-                  {"value": "Light Orange", "label": "Light Orange"},
-                  {"value": "Blue", "label": "Blue"}
-                  
+                  {"value": "White", "label": "White"},
+                  {"value": "Yellow", "label": "Yellow"}
                 ],
                 "onChange": "handleEyeColorChange"
               },
@@ -291,25 +289,260 @@
                 "label": "Age",
                 "value": "",
                 "options": [
-                  {"value": "12", "label": "12"},
-                  {"value": "13", "label": "13"},
-                  {"value": "late teens", "label": "late teens"},
-                  {"value": "17", "label": "17"},
-                  {"value": "60", "label": "60"},
-                  {"value": "33", "label": "33"},
-                  {"value": "30", "label": "30"},
-                  {"value": "50", "label": "50"},
-                  {"value": "Unknown", "label": "Unknown"},
-                  {"value": "400", "label": "400"},
-                  {"value": "300", "label": "300"},
-                  {"value": "11", "label": "11"},
-                  {"value": "4", "label": "4"},
-                  {"value": "37", "label": "37"},
+                  {"value": "4", "label": "4 Years"},
+                  {"value": "11", "label": "11 Years"},
+                  {"value": "12", "label": "12 Years"},
+                  {"value": "13", "label": "13 Years"},
+                  {"value": "17", "label": "17 Years"},
+                  {"value": "30", "label": "30 Years"},
+                  {"value": "33", "label": "33 Years"},
+                  {"value": "37", "label": "37 Years"},
+                  {"value": "50", "label": "50 Years"},
+                  {"value": "60", "label": "60 Years"},
+                  {"value": "300", "label": "300 Years"},
+                  {"value": "400", "label": "400 Years"},
+                  {"value": "late teens", "label": "Late Teens"},
                   {"value": "Adult", "label": "Adult"},
-                  {"value": "Elder", "label": "Elder"}
-                ]
-                ,
+                  {"value": "Elder", "label": "Elder"},
+                  {"value": "Unknown", "label": "Unknown"}
+                ],
                 "onChange": "handleAgeChange"
+              }
+            ]
+          }
+        ],
+        "buttons": [
+          {
+            "label": "Search",
+            "onClick": "handleSearchClick"
+          },
+          {
+            "label": "Clear",
+            "onClick": "handleClearClick"
+          }
+        ]    
+      },
+      {
+        "name": "locations",
+        "title":"Locations",
+        "url": "https://ghibliapi.vercel.app/locations",
+        "icon": "assets/icons/Type=Locations, State=Default, Size=45.png",
+        "cardType":"Card",
+        "inputGroups": [
+          {
+            "type": "text",
+            "inputs": [
+              {
+                "id": "searchCriteria",
+                "type": "text",
+                "label": "",
+                "placeholder": "Irontown",
+                "value": "",
+                "onChange": "handleInputChange"
+              }
+            ]
+          },
+          {
+            "type": "checkbox",
+            "inputs": [
+              {
+                "id": "name",
+                "type": "checkbox",
+                "label": "Name",
+                "checked": true,
+                "onChange": "handleToggleChange"
+              },
+              {
+                "id": "films",
+                "type": "checkbox",
+                "label": "Films",
+                "checked": false,
+                "onChange": "handleToggleChange"
+              },
+              {
+                "id": "residents",
+                "type": "checkbox",
+                "label": "Residents",
+                "checked": false,
+                "onChange": "handleToggleChange"
+              }
+            ]
+          },
+          {
+            "type": "select",
+            "inputs": [
+              {
+                "id": "climate",
+                "type": "select",
+                "label": "Climate",
+                "value": "",
+                "options": [
+                  {"value": "Continental", "label": "Continental"},
+                  {"value": "Dry", "label": "Dry"},
+                  {"value": "Mild", "label": "Mild"},
+                  {"value": "TODO", "label": "Todo"},
+                  {"value": "Tropical", "label": "Tropical"},
+                  {"value": "Wet", "label": "Wet"}
+                ],
+                "onChange": "handleClimateChange"
+              },
+              {
+                "id": "terrain",
+                "type": "select",
+                "label": "Terrain",
+                "value": "",
+                "options": [
+                  {"value": "City", "label": "City"},
+                  {"value": "Forest", "label": "Forest"},
+                  {"value": "Hill", "label": "Hill"},
+                  {"value": "Marsh", "label": "Marsh"},
+                  {"value": "Mountain", "label": "Mountain"},
+                  {"value": "Ocean", "label": "Ocean"},
+                  {"value": "Plain", "label": "Plain"},
+                  {"value": "TODO", "label": "Todo"}
+                ],
+                "onChange": "handleTerrainChange"
+              },
+              {
+                "id": "surface_water",
+                "type": "select",
+                "label": "Surface Water",
+                "value": "",
+                "options":[
+                  { "value": "0", "label": "0%" },
+                  { "value": "10", "label": "10%" },
+                  { "value": "20", "label": "20%" },
+                  { "value": "30", "label": "30%" },
+                  { "value": "40", "label": "40%" },
+                  { "value": "50", "label": "50%" },
+                  { "value": "60", "label": "60%" },
+                  { "value": "70", "label": "70%" },
+                  { "value": "80", "label": "80%" },
+                  { "value": "90", "label": "90%" },
+                  { "value": "100", "label": "100%" }
+                ],
+                "onChange": "handleSurfaceWaterChange"
+              }
+            ]
+          }
+        ],
+        "buttons": [
+          {
+            "label": "Search",
+            "onClick": "handleSearchClick"
+          },
+          {
+            "label": "Clear",
+            "onClick": "handleClearClick"
+          }
+        ]    
+      },
+      {
+        "name": "species",
+        "title":"Species",
+        "url": "https://ghibliapi.vercel.app/species",
+        "icon": "assets/icons/Type=Species, State=Default, Size=45.png",
+        "cardType":"Card",
+        "inputGroups": [
+          {
+            "type": "Human",
+            "inputs": [
+              {
+                "id": "searchCriteria",
+                "type": "text",
+                "label": "",
+                "placeholder": "Irontown",
+                "value": "",
+                "onChange": "handleInputChange"
+              }
+            ]
+          },
+          {
+            "type": "checkbox",
+            "inputs": [
+              {
+                "id": "name",
+                "type": "checkbox",
+                "label": "Name",
+                "checked": true,
+                "onChange": "handleToggleChange"
+              },
+              {
+                "id": "films",
+                "type": "checkbox",
+                "label": "Films",
+                "checked": false,
+                "onChange": "handleToggleChange"
+              },
+              {
+                "id": "people",
+                "type": "checkbox",
+                "label": "People",
+                "checked": false,
+                "onChange": "handleToggleChange"
+              }
+            ]
+          },
+          {
+            "type": "select",
+            "inputs": [
+              {
+                "id": "classification",
+                "type": "select",
+                "label": "Classification",
+                "value": "",
+                "options": [
+                  {"value": "Mammal", "label": "Mammal"},
+                  {"value": "Elk", "label": "Elk"},
+                  {"value": "Spirit", "label": "Spirit"},
+                  {"value": "God", "label": "God"},
+                  {"value": "Dragon", "label": "Dragon"},
+                  {"value": "Wet", "label": "Wet"}
+                ],
+                "onChange": "handleClassificationChange"
+              },
+              {
+                "id": "eye_colors",
+                "type": "select",
+                "label": "Eye Color",
+                "value": "",
+                "options": [
+                  {"value": "Black", "label": "Black"},
+                  {"value": "Blue", "label": "Blue"},
+                  {"value": "Brown", "label": "Brown"},
+                  {"value": "Cyan", "label": "Cyan"},
+                  {"value": "Dark brown", "label": "Dark Brown"},
+                  {"value": "Dark brown/Black", "label": "Dark Brown/Black"},
+                  {"value": "Emerald", "label": "Emerald"},
+                  {"value": "Green", "label": "Green"},
+                  {"value": "Grey", "label": "Grey"},
+                  {"value": "Hazel", "label": "Hazel"},
+                  {"value": "Orange", "label": "Orange"},
+                  {"value": "Red", "label": "Red"},
+                  {"value": "White", "label": "White"},
+                  {"value": "Yellow", "label": "Yellow"}
+                ],
+                "onChange": "handleTerrainChange"
+              },
+              {
+                "id": "surface_water",
+                "type": "select",
+                "label": "Surface Water",
+                "value": "",
+                "options":[
+                  { "value": "0", "label": "0%" },
+                  { "value": "10", "label": "10%" },
+                  { "value": "20", "label": "20%" },
+                  { "value": "30", "label": "30%" },
+                  { "value": "40", "label": "40%" },
+                  { "value": "50", "label": "50%" },
+                  { "value": "60", "label": "60%" },
+                  { "value": "70", "label": "70%" },
+                  { "value": "80", "label": "80%" },
+                  { "value": "90", "label": "90%" },
+                  { "value": "100", "label": "100%" }
+                ],
+                "onChange": "handleSurfaceWaterChange"
               }
             ]
           }
