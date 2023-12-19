@@ -5,8 +5,9 @@
         "title":"Films",
         "url": "https://ghibliapi.vercel.app/films",
         "icon": "assets/icons/Type=Films, State=Default, Size=45.png",
+        "banner":"",
         "cardType":"CardImage",
-        "inputGroups": [
+        "filters": [
           {
             "type": "text",
             "inputs": [
@@ -183,7 +184,7 @@
         "url": "https://ghibliapi.vercel.app/people",
         "icon": "assets/icons/Type=People, State=Default, Size=45.png",
         "cardType":"Card",
-        "inputGroups": [
+        "filters": [
           {
             "type": "text",
             "inputs": [
@@ -328,7 +329,7 @@
         "url": "https://ghibliapi.vercel.app/locations",
         "icon": "assets/icons/Type=Locations, State=Default, Size=45.png",
         "cardType":"Card",
-        "inputGroups": [
+        "filters": [
           {
             "type": "text",
             "inputs": [
@@ -443,7 +444,7 @@
         "url": "https://ghibliapi.vercel.app/species",
         "icon": "assets/icons/Type=Species, State=Default, Size=45.png",
         "cardType":"Card",
-        "inputGroups": [
+        "filters": [
           {
             "type": "Human",
             "inputs": [
