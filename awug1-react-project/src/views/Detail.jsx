@@ -1,22 +1,22 @@
-// views/DetailPage.js
+// views/Detail.js
 import React from 'react';
 import Footer from '../components/common/Footer';
-import Header from '../components/common/Header';
+import Header from '../components/common/HeaderPage';
 import Navbar from '../components/common/Navbar';
-import Detail from '../components/specific/DetailFilm';
+import DetailComponent from '../components/common/Detail';
 
 /**
- * DetailPage view that displays detailed information about a specific item.
+ * Detail view that displays detailed information about a specific item.
  */
-const DetailPage = () => {
+const Detail = () => {
   return (
     <div>
       <Header />
       <Navbar />
-      <Detail />
+      <DetailComponent />
       <Footer />
     </div>
   );
 };
 
-export default DetailPage;
+export default Detail;

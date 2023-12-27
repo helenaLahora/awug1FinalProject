@@ -1,6 +1,5 @@
 // views/Home.js
 import React from 'react';
-import ListFilms from '../components/common/CarrousselImages';
 import Footer from '../components/common/Footer';
 import Header from '../components/common/HeaderPage';
 import Navbar from '../components/common/Navbar';
@@ -13,7 +12,6 @@ const Home = () => {
     <div>
       <Header />
       <Navbar />
-      <ListFilms />
       <Footer />
     </div>
   );

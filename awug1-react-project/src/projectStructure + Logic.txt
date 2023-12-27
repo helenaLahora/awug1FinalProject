@@ -1,27 +1,29 @@
 src/
 ├── components/
+│   ├── assets/
+│   │   ├── categoryBanners/
+│   │   ├── icons/
+│   │   └── information.json
 │   ├── common/
 │   │   ├── AlterResults.jsx
 │   │   ├── AlterResultsFilter.jsx
 │   │   ├── AlterResultsView.jsx
 │   │   ├── Button.jsx
-│   │   ├── Card.jsx "endpoint","id"
-│   │   ├── CardImage.jsx "endpoint","id"
+│   │   ├── Card.jsx
+│   │   ├── CardImage.jsx
 │   │   ├── Checkbox.jsx
 │   │   ├── Dropdown.js
 │   │   └── SearchForm.jsx
 │   ├── common/
-│   │   ├── Carroussel.jsx "endpoint","cardType"
-│   │   ├── CarrousselImages.jsx "endpoint","cardType"
-│   │   ├── Detail.jsx "endpoint","id"
-│   │   ├── DetailImage.jsx "endpoint","id"
+│   │   ├── Detail.jsx
+│   │   ├── DetailImage.jsx
 │   │   ├── Footer.jsx
-│   │   ├── HeaderCategory.jsx "endpoint"
+│   │   ├── HeaderCategory.jsx
 │   │   ├── HeaderPage.jsx
 │   │   ├── Navbar.jsx
 │   │   ├── Results.jsx
-│   │   ├── SearchGeneral.jsx "endpoint"
-│   │   └── SearchSpecific.jsx "endpont"
+│   │   ├── SearchGeneral.jsx
+│   │   └── SearchSpecific.jsx
 ├── views/
 │   ├── Home.jsx
 │   ├── Search.jsx

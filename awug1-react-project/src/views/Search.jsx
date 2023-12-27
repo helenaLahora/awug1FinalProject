@@ -1,22 +1,20 @@
-// views/SearchPage.js
+// views/Search.js
 import React from 'react';
-import Search from '../components/common/Results';
+import HeaderCategory from '../components/common/HeaderCategory';
 import Footer from '../components/common/Footer';
-import Header from '../components/common/HeaderPage';
 import Navbar from '../components/common/Navbar';
 
 /**
- * SearchPage view that allows users to search for Disney .
+ * Search view that allows users to search for ghibli items .
  */
-const SearchPage = () => {
+const Search = () => {
   return (
     <div>
-      <Header />
       <Navbar />
-      <Search />
+      <HeaderCategory />
       <Footer />
     </div>
   );
 };
 
-export default SearchPage;
+export default Search;

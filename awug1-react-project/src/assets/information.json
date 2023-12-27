@@ -4,8 +4,8 @@
         "name": "films",
         "title":"Films",
         "url": "https://ghibliapi.vercel.app/films",
-        "icon": "assets/icons/Type=Films, State=Default, Size=45.png",
-        "banner":"",
+        "icon": "../../assets/icons/Arrow_Default_30.png",
+        "banner":"assets/categoryBanners/films.png",
         "cardType":"CardImage",
         "filters": [
           {
@@ -182,7 +182,8 @@
         "name": "people",
         "title":"People",
         "url": "https://ghibliapi.vercel.app/people",
-        "icon": "assets/icons/Type=People, State=Default, Size=45.png",
+        "icon": "assets/icons/People,Default,45.png",
+        "banner":"assets/categoryBanners/people.png",
         "cardType":"Card",
         "filters": [
           {
@@ -327,7 +328,8 @@
         "name": "locations",
         "title":"Locations",
         "url": "https://ghibliapi.vercel.app/locations",
-        "icon": "assets/icons/Type=Locations, State=Default, Size=45.png",
+        "icon": "assets/icons/Locations,Default,45.png",
+        "banner":"assets/categoryBanners/locations.png",
         "cardType":"Card",
         "filters": [
           {
@@ -442,7 +444,8 @@
         "name": "species",
         "title":"Species",
         "url": "https://ghibliapi.vercel.app/species",
-        "icon": "assets/icons/Type=Species, State=Default, Size=45.png",
+        "icon": "assets/icons/Species,Default,45.png",
+        "banner":"assets/categoryBanners/species.png",
         "cardType":"Card",
         "filters": [
           {
