@@ -1,0 +1,19 @@
+/* HeaderCategory.css */
+
+.header-content {
+    background-size: cover;
+    display: flex;
+    width: 100vw;
+    height: 90px;
+  }
+  
+  .arrow {
+    cursor: pointer;
+  }
+  
+  .category-info {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }  
