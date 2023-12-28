@@ -1,9 +1,9 @@
+// HeaderCategory.jsx
 import React, { useState, useEffect } from 'react';
-import JsonFile from '../../assets/information.json';
+import { useCategory } from '../common/CategoryContext'; // Importing the custom hook for category context
 import arrowIcon from '../../assets/icons/Arrow_Default_30.png';
-
-// Import the CSS styles
-import '../../assets/styles/HeaderCategory.css';
+import '../../assets/styles/HeaderCategory.css'; // Importing the CSS styles
+import JsonFile from '../../assets/information.json';
 
 // A memoized functional component for the arrow icon
 const ArrowIcon = React.memo(({ direction }) => (
@@ -11,45 +11,62 @@ const ArrowIcon = React.memo(({ direction }) => (
     src={arrowIcon}
     alt={`Arrow ${direction}`}
     style={{
-      transform: direction === 'left' ? 'rotate(180deg)' : 'none',  // Rotate the arrow icon if the direction is 'left'
-      cursor: 'pointer',  // Set the cursor to a pointer
+      // Rotate the arrow icon if the direction is 'left', set the cursor to a pointer
+      transform: direction === 'left' ? 'rotate(180deg)' : 'none',
+      cursor: 'pointer',
     }}
   />
 ));
 
 // The main HeaderCategory functional component
 const HeaderCategory = ({ onCategoryChange }) => {
-  // State variables to track the displayed category, retrieved data, and the category index
-  const [displayedCategory, setCategoryIndex] = useState(0);
+  // Using the custom hook to access the category index and a function to set it
+  const { categoryIndex, setCategoryIndex } = useCategory();
+  // State to store the retrieved category data
   const [dataRetrieved, setCurrentCategory] = useState(null);
 
   // useEffect hook to fetch data when the component mounts or when the displayed category changes
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // Get category data based on the displayed category index
-        const categoryData = JsonFile.endpoints?.[displayedCategory];
+        // Retrieve category data based on the current category index
+        const categoryData = JsonFile.endpoints?.[categoryIndex];
+
         if (categoryData) {
-          setCurrentCategory(categoryData);  // Set the retrieved data in the state
+          // Update state with the retrieved category data
+          setCurrentCategory(categoryData);
+          // Notify parent component about the category change, if a callback function is provided
           if (typeof onCategoryChange === 'function') {
-            onCategoryChange(categoryData.index);  // Notify parent about category change
+            onCategoryChange(categoryData.index);
           }
         } else {
-          console.error(`Data for category ${displayedCategory} is undefined.`);
+          // Log an error if the data for the current category index is undefined
+          console.error(`Data for category ${categoryIndex} is undefined.`);
         }
       } catch (error) {
-        console.error("Error fetching data:", error);
+        // Log an error if there's an issue fetching data
+        console.error('Error fetching data:', error);
       }
     };
 
+    // Call the fetchData function
     fetchData();
-  }, [displayedCategory, onCategoryChange]);  // Dependencies for the useEffect hook
 
-  // Function to change the displayed category based on the direction
+    // The useEffect dependency array, including categoryIndex and onCategoryChange
+  }, [categoryIndex, onCategoryChange]);
+
+  // Function to change the displayed category based on the specified direction
   const changeCategory = (direction) => {
     setCategoryIndex((prevIndex) => {
+      // Calculate the new category index based on the direction
       const totalCategories = Object.keys(JsonFile.endpoints).length;
-      return direction === 'previous' ? (prevIndex === 0 ? totalCategories - 1 : prevIndex - 1) : (prevIndex === totalCategories - 1 ? 0 : prevIndex + 1);
+      return direction === 'previous'
+        ? prevIndex === 0
+          ? totalCategories - 1
+          : prevIndex - 1
+        : prevIndex === totalCategories - 1
+        ? 0
+        : prevIndex + 1;
     });
   };
 
@@ -66,24 +83,27 @@ const HeaderCategory = ({ onCategoryChange }) => {
     <div
       className="header-content"
       style={{
+        // Set the background image dynamically based on the retrieved data
         backgroundImage: `url(${backgroundImage})`,
       }}
     >
-      {/* Left arrow for previous category */}
+      {/* Left arrow for navigating to the previous category */}
       <div className="arrow" onClick={() => changeCategory('previous')}>
         <ArrowIcon direction="left" />
       </div>
 
       {/* Display category information (icon and title) */}
       <div className="category-info">
+        {/* Retrieve and display the category icon */}
         <img
           src={require(`../../assets/icons/${dataRetrieved.icon}`)}
           alt={dataRetrieved.title}
         />
+        {/* Display the category title */}
         <h2>{dataRetrieved.title}</h2>
       </div>
 
-      {/* Right arrow for next category */}
+      {/* Right arrow for navigating to the next category */}
       <div className="arrow" onClick={() => changeCategory('next')}>
         <ArrowIcon direction="right" />
       </div>
@@ -91,4 +111,5 @@ const HeaderCategory = ({ onCategoryChange }) => {
   );
 };
 
-export default HeaderCategory;  // Exporting the HeaderCategory component
+// Export the HeaderCategory component
+export default HeaderCategory;

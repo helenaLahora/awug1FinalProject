@@ -5,15 +5,27 @@ import Home from './views/Home';
 import Search from './views/Search';
 import Detail from './views/Detail';
 
+// Import CategoryProvider from the correct path
+import { CategoryProvider } from '../src/components/common/CategoryContext';
+
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/search" element={<Search />} />
+        {/* Wrap the Search component with CategoryProvider */}
+        <Route
+          path="/search"
+          element={
+            <Search>
+              <CategoryProvider />
+            </Search>
+          }
+        />
         <Route path="/:id" element={<Detail />} />
       </Routes>
     </Router>
   );
 }
+
 export default App;

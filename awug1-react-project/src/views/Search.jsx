@@ -1,19 +1,26 @@
-// views/Search.js
+// Search.jsx
 import React from 'react';
 import HeaderCategory from '../components/common/HeaderCategory';
 import Footer from '../components/common/Footer';
 import Navbar from '../components/common/Navbar';
+import FilterMainInput from '../components/common/FilterMainInput';
+import RenderResults from '../components/common/Results';
+import { CategoryProvider } from '../components/common/CategoryContext';
+import { FilterProvider } from '../components/common/FilterContext';
 
-/**
- * Search view that allows users to search for ghibli items .
- */
 const Search = () => {
   return (
-    <div>
-      <Navbar />
-      <HeaderCategory />
-      <Footer />
-    </div>
+    <CategoryProvider>
+      <FilterProvider>
+        <div>
+          <Navbar />
+          <HeaderCategory />
+          <FilterMainInput />
+          <RenderResults />
+          <Footer />
+        </div>
+      </FilterProvider>
+    </CategoryProvider>
   );
 };
 

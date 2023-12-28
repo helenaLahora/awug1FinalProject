@@ -14,7 +14,6 @@
               {
                 "id": "searchCriteria",
                 "type": "text",
-                "label": "",
                 "placeholder": "Castle in the Sky",
                 "value": "",
                 "onChange": "handleInputChange"
@@ -192,7 +191,6 @@
               {
                 "id": "searchCriteria",
                 "type": "text",
-                "label": "",
                 "placeholder": "Haku",
                 "value": "",
                 "onChange": "handleInputChange"
@@ -338,7 +336,6 @@
               {
                 "id": "searchCriteria",
                 "type": "text",
-                "label": "",
                 "placeholder": "Irontown",
                 "value": "",
                 "onChange": "handleInputChange"
@@ -449,13 +446,12 @@
         "cardType":"Card",
         "filters": [
           {
-            "type": "Human",
+            "type": "text",
             "inputs": [
               {
                 "id": "searchCriteria",
                 "type": "text",
-                "label": "",
-                "placeholder": "Irontown",
+                "placeholder": "Human",
                 "value": "",
                 "onChange": "handleInputChange"
               }
