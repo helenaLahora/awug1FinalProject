@@ -1,6 +1,6 @@
 // Search.jsx
 import React from 'react';
-import HeaderCategory from '../components/common/HeaderCategory';
+import HeaderCategory from '../components/common/CategoryForm';
 import Footer from '../components/common/Footer';
 import Navbar from '../components/common/Navbar';
 import FilterMainInput from '../components/common/FilterMainInput';

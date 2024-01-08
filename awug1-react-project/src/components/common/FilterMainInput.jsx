@@ -1,3 +1,4 @@
+// FilterMainInput.jsx
 import React, { useState, useEffect } from 'react';
 import { useFilter } from './FilterContext';
 import JsonFile from '../../assets/information.json';
@@ -35,7 +36,8 @@ const FilterMainInput = () => {
   };
 
   const handleAddFilter = () => {
-    addFilter({ type: 'text', value: inputValue });
+    // Set the 'text' property in the addFilter function
+    addFilter({ type: 'text', text: inputValue });
     setInputValue('');
   };
 

@@ -1,21 +1,15 @@
-// FilterContext.js
+// FilterContext.jsx
 import React, { createContext, useContext, useState } from 'react';
 
-// Create a context for managing filters
 const FilterContext = createContext();
 
-// Create a provider component to manage the state of filters
 export const FilterProvider = ({ children }) => {
-  // State to store the list of filters
-  const [filters, setFilters] = useState([]);
+  const [filters, setFilters] = useState({ text: '' }); // Ensure 'text' is initialized with a default value
 
-  // Function to add a filter to the list
   const addFilter = (filter) => {
-    // Use the setFilters function from useState to update the state with the new filter
-    setFilters((prevFilters) => [...prevFilters, filter]);
+    setFilters((prevFilters) => ({ ...prevFilters, ...filter }));
   };
 
-  // Provide the filters and addFilter function to the components in the context
   return (
     <FilterContext.Provider value={{ filters, addFilter }}>
       {children}
@@ -23,8 +17,10 @@ export const FilterProvider = ({ children }) => {
   );
 };
 
-// Custom hook to conveniently access the filter context
 export const useFilter = () => {
-  // Use the useContext hook to access the FilterContext and retrieve its value
-  return useContext(FilterContext);
+  const context = useContext(FilterContext);
+  if (!context) {
+    throw new Error('useFilter must be used within a FilterProvider');
+  }
+  return context;
 };
