@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { useFilter } from './FilterContext';
 import JsonFile from '../../assets/information.json';
-import { useCategory } from '../common/CategoryContext';
+import { useCategory } from './CategoryContext';
 
 const FilterMainInput = () => {
   const { addFilter } = useFilter();
