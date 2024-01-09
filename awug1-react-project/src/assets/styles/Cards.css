@@ -58,6 +58,7 @@ flex-shrink: 0;
 
 .card:hover {
   transform: scale(3); /* Increase the size on hover */
+  cursor: pointer; /* Change cursor on hover */
 }
 
 .card:active {
@@ -76,6 +77,7 @@ flex-shrink: 0;
 }
 .imageContainer:hover {
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Example: Add a shadow on hover */
+  cursor: pointer; /* Change cursor on hover */
 }
 
 .imageContainer:active {
