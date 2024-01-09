@@ -1,14 +1,14 @@
 // components/common/Header.jsx
 import React from 'react';
-
+import '../../assets/styles/HeaderPage.css'
 /**
  * Header component that serves as the top part of the application.
  * Typically contains the title or logo.
  */
-const Header = () => {
+const Header = ({ title }) => {
   return (
-    <div>
-      <h1>Ghibli Studios</h1>
+    <div className="wrapper">
+      <h1>{title}</h1>
     </div>
   );
 };

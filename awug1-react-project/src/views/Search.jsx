@@ -1,8 +1,9 @@
 // Search.jsx
 import React from 'react';
-import HeaderCategory from '../components/common/CategoryForm';
+import HeaderForm from '../components/common/CategoryForm';
 import Footer from '../components/common/Footer';
 import Navbar from '../components/common/Navbar';
+import HeaderPage from '../components/common/HeaderPage';
 import FilterMainInput from '../components/common/FilterMain';
 import RenderResults from '../components/common/Results';
 import { CategoryProvider } from '../components/common/CategoryContext';
@@ -14,7 +15,8 @@ const Search = () => {
       <FilterProvider>
         <div>
           <Navbar />
-          <HeaderCategory />
+          <HeaderPage title={"Discover the Ghibli Universe"}/>
+          <HeaderForm />
           <FilterMainInput />
           <RenderResults />
           <Footer />

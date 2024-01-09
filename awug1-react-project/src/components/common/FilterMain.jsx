@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useFilter } from './FilterContext';
 import JsonFile from '../../assets/information.json';
 import { useCategory } from './CategoryContext';
+import '../../assets/styles/FilterMain.css';
 
 const FilterMainInput = () => {
   const { addFilter } = useFilter();
@@ -42,7 +43,7 @@ const FilterMainInput = () => {
   };
 
   return (
-    <div>
+    <div className="wrapperFilterMain">
       <input
         type="text"
         id={inputProperties.id}
@@ -50,7 +51,7 @@ const FilterMainInput = () => {
         value={inputValue}
         onChange={handleInputChange}
       />
-      <button onClick={handleAddFilter}>Search</button>
+      <button onClick={handleAddFilter} className="Submit"></button>
     </div>
   );
 };

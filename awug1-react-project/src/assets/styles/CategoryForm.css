@@ -1,9 +1,9 @@
 /* HeaderCategory.css */
 
-.banner {
+.Banner {
     background-size: cover;
     display: flex;
-    height: 90px;
+    height: 120px;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
@@ -11,12 +11,27 @@
     padding-right:60px;
   }
   
-  .arrow {
+  .Arrow {
     cursor: pointer;
   }
   
-  .category-info {
+  .CategoryInfo {
   display: flex;
   align-items: center;
   gap: 20px;
-  }  
+  }
+
+  .Title{
+    color: var(--Text-Default, #192D2B);
+    text-align: center;
+    font-family: Lora;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .Icon{
+    width: 45px;
+    height: 45px;
+  }

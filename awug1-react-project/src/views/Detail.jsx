@@ -11,7 +11,7 @@ import DetailComponent from '../components/common/Detail';
 const Detail = () => {
   return (
     <div>
-      <Header />
+      <Header title={"Discover the Ghibli Universe"}/>
       <Navbar />
       <DetailComponent />
       <Footer />

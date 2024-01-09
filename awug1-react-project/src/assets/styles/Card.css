@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+.card {
+  display: flex;
+  width: 160px;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  padding: 10px 5px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.title {
+  width: 125px;
+  color: var(--Text-Default, #192D2B);
+  text-align: center;
+  font-family: Raleway;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0px;
+  padding-top:5px;
+  padding-bottom:2.5px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.originalTitle {
+  color: var(--Text-Default, #192D2B);
+  text-align: center;
+  font-family: Raleway;
+  font-size: 8px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0px;
+  padding-bottom:5px;
+  padding-top:2.5px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.imageContainer {
+  width: 125px;
+  height: 215px;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: transform 0.5s ease-in-out;
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: 1px solid #A6A494;
+}
+
+.card:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+  transition: transform 0.5s ease-in-out;
+}
+
+.card:hover>.imageContainer {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border: 3px solid var(--State-Hover, #82C7D9);
+  cursor:pointer;
+  transition: transform 0.5s ease-in-out;
+}
+
+.card:hover>.originalTitle {
+  color: var(--State-Hover, #82C7D9);
+  cursor:pointer;
+  transition: transform 0.5s ease-in-out;
+}
+
+.card:hover>.title{
+  color: var(--State-Hover, #82C7D9);
+  cursor:pointer;
+  font-size: 12px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.card:active {
+  transform: scale(1) translateY(2px);
+  transition: transform 0.5s ease-in-out;
+}
+
+.card:active > .imageContainer {
+  cursor: pointer;
+  border: 3px solid var(--State-Hover, #26B3D9);
+  transition: transform 0.5s ease-in-out;
+}
+
+.card:active > .title,
+.card:active > .originalTitle {
+  color: var(--state-cta-active, #26B3D9);
+  /* Add a higher specificity for the :active state */
+  transition: transform 0.5s ease-in-out;
+}

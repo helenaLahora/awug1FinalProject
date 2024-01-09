@@ -1,6 +1,7 @@
 // components/common/Navbar.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
+import '../../assets/styles/NavBar.css';
 
 /**
  * Navbar component for navigation between different views.
@@ -8,11 +9,11 @@ import { Link } from 'react-router-dom';
  */
 const Navbar = () => {
   return (
-    <div>
-      {/* Navigation links */}
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/search">Search</Link>
+    <div className="NavBar">
+    <Link to="/" className="Icon"></Link>
+      <nav className="Router">
+        <Link to="/" className="HomeLink">Home</Link>
+        <Link to="/search" className="SearchLink" >Search</Link>
       </nav>
     </div>
   );

@@ -1,0 +1,79 @@
+.NavBar{
+    display: flex;
+    padding: 35px 150px;
+    align-items: center;
+    gap: 100px;
+}
+
+.Router{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap:50px;
+    flex: 1 0 0;
+}
+
+.Icon{
+    cursor:pointer;
+    color: var(--Text-Default, #192D2B);
+}
+
+.Icon:before {
+    background-image: url('../logo/GhibliLogo.svg');
+    color: var(--Text-Default, #192D2B);
+    background-size:auto; /* Change from 'cover' to 'contain' */
+    width: 307px; /* Adjust the width as needed */
+    height: 30px; /* Adjust the height as needed */
+    margin-right: 5px;
+    position: relative;
+    top: 3px;
+    content: "";
+    display: inline-block;
+}
+
+
+.HomeLink{
+    color: var(--Text-Default, #192D2B);
+    font-family: Lora;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-decoration: none;
+}
+
+.HomeLink:before{
+    background-image: url('../icons/Home.svg');
+    background-size: cover;
+    width: 25px;
+    height: 25px;
+    margin-right: 5px;
+    position: relative;
+    top: 3px;
+    content: "";
+    display: inline-block;
+    fill:hsba(174, 44%, 18%, 1);
+}
+
+.SearchLink{
+    color: var(--Text-Default, #192D2B);
+    font-family: Lora;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-decoration: none;
+}
+
+.SearchLink:before{
+    background-image: url('../icons/Search.svg');
+    background-size: contain;
+    width: 22px;
+    height: 22px;
+    margin-right: 5px;
+    position: relative;
+    top: 2px;
+    content: "";
+    display: inline-block;
+    fill:hsba(174, 44%, 18%, 1);
+}

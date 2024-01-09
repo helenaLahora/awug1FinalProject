@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { useCategory } from './CategoryContext';
-import arrowIcon from '../../assets/icons/Arrow_Default_30.png';
+import arrowIcon from '../../assets/icons/Arrow.svg';
 import '../../assets/styles/CategoryForm.css';
 import JsonFile from '../../assets/information.json';
 import { useFilter } from './FilterContext';
@@ -66,7 +66,7 @@ const CategoryForm = ({ onCategoryChange }) => {
 
   return (
     <div
-      className="banner"
+      className="Banner"
       style={{
         backgroundImage: `url(${backgroundImage})`,
       }}
@@ -75,12 +75,12 @@ const CategoryForm = ({ onCategoryChange }) => {
         <ArrowIcon direction="left" />
       </div>
 
-      <div className="category-info">
-        <img src={require(`../../assets/icons/${dataRetrieved.icon}`)} alt={dataRetrieved.title} />
-        <h2>{dataRetrieved.title}</h2>
+      <div className="CategoryInfo">
+        <img src={require(`../../assets/icons/${dataRetrieved.icon}`)} alt={dataRetrieved.title} className="Icon"/>
+        <h2 className="Title">{dataRetrieved.title}</h2>
       </div>
 
-      <div className="arrow" onClick={() => changeCategory('next')}>
+      <div className="Arrow" onClick={() => changeCategory('next')}>
         <ArrowIcon direction="right" />
       </div>
     </div>

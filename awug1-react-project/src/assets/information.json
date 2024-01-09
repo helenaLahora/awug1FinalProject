@@ -4,10 +4,9 @@
         "name": "films",
         "title":"Films",
         "url": "https://ghibliapi.dev/films",
-        "icon": "Films_Default_45.png",
+        "icon": "Films.svg",
         "banner":"films.png",
         "placeholder":"placeHolder_Films.png",
-        "cardType":"CardImage",
         "filters": [
           {
             "type": "text",
@@ -182,10 +181,9 @@
         "name": "people",
         "title":"People",
         "url": "https://ghibliapi.dev/people",
-        "icon": "People_Default_45.png",
+        "icon": "People.svg",
         "banner":"people.png",
         "placeholder":"placeHolder_People.png",
-        "cardType":"Card",
         "filters": [
           {
             "type": "text",
@@ -328,10 +326,9 @@
         "name": "locations",
         "title":"Locations",
         "url": "https://ghibliapi.dev/locations",
-        "icon": "Locations_Default_45.png",
+        "icon": "Locations.svg",
         "banner":"locations.png",
         "placeholder":"placeHolder_Locations.png",
-        "cardType":"Card",
         "filters": [
           {
             "type": "text",
@@ -444,10 +441,9 @@
         "name": "species",
         "title":"Species",
         "url": "https://ghibliapi.dev/species",
-        "icon": "Species_Default_45.png",
+        "icon": "Species.svg",
         "banner":"species.png",
         "placeholder":"placeHolder_Species.png",
-        "cardType":"Card",
         "filters": [
           {
             "type": "text",
@@ -456,6 +452,127 @@
                 "id": "searchCriteria",
                 "type": "text",
                 "placeholder": "Human",
+                "value": "",
+                "onChange": "handleInputChange"
+              }
+            ]
+          },
+          {
+            "type": "checkbox",
+            "inputs": [
+              {
+                "id": "name",
+                "type": "checkbox",
+                "label": "Name",
+                "checked": true,
+                "onChange": "handleToggleChange"
+              },
+              {
+                "id": "films",
+                "type": "checkbox",
+                "label": "Films",
+                "checked": false,
+                "onChange": "handleToggleChange"
+              },
+              {
+                "id": "people",
+                "type": "checkbox",
+                "label": "People",
+                "checked": false,
+                "onChange": "handleToggleChange"
+              }
+            ]
+          },
+          {
+            "type": "select",
+            "inputs": [
+              {
+                "id": "classification",
+                "type": "select",
+                "label": "Classification",
+                "value": "",
+                "options": [
+                  {"value": "Mammal", "label": "Mammal"},
+                  {"value": "Elk", "label": "Elk"},
+                  {"value": "Spirit", "label": "Spirit"},
+                  {"value": "God", "label": "God"},
+                  {"value": "Dragon", "label": "Dragon"},
+                  {"value": "Wet", "label": "Wet"}
+                ],
+                "onChange": "handleClassificationChange"
+              },
+              {
+                "id": "eye_colors",
+                "type": "select",
+                "label": "Eye Color",
+                "value": "",
+                "options": [
+                  {"value": "Black", "label": "Black"},
+                  {"value": "Blue", "label": "Blue"},
+                  {"value": "Brown", "label": "Brown"},
+                  {"value": "Cyan", "label": "Cyan"},
+                  {"value": "Dark brown", "label": "Dark Brown"},
+                  {"value": "Dark brown/Black", "label": "Dark Brown/Black"},
+                  {"value": "Emerald", "label": "Emerald"},
+                  {"value": "Green", "label": "Green"},
+                  {"value": "Grey", "label": "Grey"},
+                  {"value": "Hazel", "label": "Hazel"},
+                  {"value": "Orange", "label": "Orange"},
+                  {"value": "Red", "label": "Red"},
+                  {"value": "White", "label": "White"},
+                  {"value": "Yellow", "label": "Yellow"}
+                ],
+                "onChange": "handleTerrainChange"
+              },
+              {
+                "id": "surface_water",
+                "type": "select",
+                "label": "Surface Water",
+                "value": "",
+                "options":[
+                  { "value": "0", "label": "0%" },
+                  { "value": "10", "label": "10%" },
+                  { "value": "20", "label": "20%" },
+                  { "value": "30", "label": "30%" },
+                  { "value": "40", "label": "40%" },
+                  { "value": "50", "label": "50%" },
+                  { "value": "60", "label": "60%" },
+                  { "value": "70", "label": "70%" },
+                  { "value": "80", "label": "80%" },
+                  { "value": "90", "label": "90%" },
+                  { "value": "100", "label": "100%" }
+                ],
+                "onChange": "handleSurfaceWaterChange"
+              }
+            ]
+          }
+        ],
+        "buttons": [
+          {
+            "label": "Search",
+            "onClick": "handleSearchClick"
+          },
+          {
+            "label": "Clear",
+            "onClick": "handleClearClick"
+          }
+        ]    
+      },
+      {
+        "name": "vehicles",
+        "title":"Vehicles",
+        "url": "https://ghibliapi.dev/vehicles",
+        "icon": "Vehicles.svg",
+        "banner":"vehicles.png",
+        "placeholder":"placeHolder_Vehicles.png",
+        "filters": [
+          {
+            "type": "text",
+            "inputs": [
+              {
+                "id": "searchCriteria",
+                "type": "text",
+                "placeholder": "Air Destroyer Goliath",
                 "value": "",
                 "onChange": "handleInputChange"
               }

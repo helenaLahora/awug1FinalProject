@@ -1,6 +1,6 @@
-.wrapper{
+.wrapperResults{
     display: flex;
-    padding: 15px;
+    padding-top: 30px;
     gap: 5px;
     flex-wrap: wrap;
     margin:auto;

@@ -10,8 +10,8 @@ import Navbar from '../components/common/Navbar';
 const Home = () => {
   return (
     <div>
-      <Header />
       <Navbar />
+      <Header title={"Welcome, happy to see you here :)"}/>
       <Footer />
     </div>
   );

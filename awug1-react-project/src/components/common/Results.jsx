@@ -12,7 +12,6 @@ const Results = ({ onCategoryChange }) => {
   const { filters } = useFilter();
   const [resultArray, setResultArray] = useState([]);
   const placeHolder = require(`../../assets/placeholders/${JsonFile.endpoints?.[categoryIndex].placeholder}`)
-  console.log(placeHolder);
 
   // Function to apply filters to the data
   const applyFilters = (data, filters) => {
@@ -41,7 +40,7 @@ const Results = ({ onCategoryChange }) => {
   }, [categoryIndex, filters]);
 
   return (
-    <div className="wrapper">
+    <div className="wrapperResults">
         {resultArray.map((item) => (
         <Card key={item.id} title={item.title || item.name} originalTitle={item.original_title} image={item.image || placeHolder} />
         ))}

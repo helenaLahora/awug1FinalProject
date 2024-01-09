@@ -12,3 +12,65 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+h1{
+  color: var(--Text-Default, #192D2B);
+  text-align: center;
+  font-family: Lora;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin:0;
+}
+
+input[type="text"] {
+  /* Your regular styles here */
+  border-radius: 5px;
+  border: 2px solid var(--Text-Default, #192D2B);
+  width: 500px;
+  padding: 5px 0px 5px 10px;
+  align-items: center;
+  background-color: #f2f2f200;
+  margin:15px;
+}
+
+/* Hover state */
+input[type="text"]:hover {
+  padding: 5px 0px 5px 10px;
+  align-items: center;
+  border-radius: 5px;
+  border: 2px solid var(--State-Hover, #82C7D9);
+}
+
+/* Focus state */
+input[type="text"]:focus {
+  outline: none; /* Remove default focus outline */
+  padding: 4px 0px 5px 10px;
+  align-items: center;
+  border-radius: 5px;
+  border: 3px solid var(--state-cta-active, #26B3D9);
+  color: var(--Text-Default, #26B3D9);
+  font-family: Raleway;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+/* Disabled state */
+input[type="text"]:disabled {
+  background-color: #f2f2f2;
+  color: #999;
+  border: 1px solid #ddd;
+}
+
+/* Placeholder text */
+input[type="text"]::placeholder {
+  color: var(--Text-Placeholder, #666);
+  font-family: Raleway;
+  font-size: 15px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: normal;
+}
