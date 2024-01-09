@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './views/Home';
 import Search from './views/Search';
 import Detail from './views/Detail';
+import './index.css';
 
 // Import CategoryProvider from the correct path
 import { CategoryProvider } from '../src/components/common/CategoryContext';

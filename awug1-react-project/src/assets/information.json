@@ -3,9 +3,10 @@
       {
         "name": "films",
         "title":"Films",
-        "url": "https://ghibliapi.vercel.app/films",
+        "url": "https://ghibliapi.dev/films",
         "icon": "Films_Default_45.png",
         "banner":"films.png",
+        "placeholder":"placeHolder_Films.png",
         "cardType":"CardImage",
         "filters": [
           {
@@ -180,9 +181,10 @@
       {
         "name": "people",
         "title":"People",
-        "url": "https://ghibliapi.vercel.app/people",
+        "url": "https://ghibliapi.dev/people",
         "icon": "People_Default_45.png",
         "banner":"people.png",
+        "placeholder":"placeHolder_People.png",
         "cardType":"Card",
         "filters": [
           {
@@ -325,9 +327,10 @@
       {
         "name": "locations",
         "title":"Locations",
-        "url": "https://ghibliapi.vercel.app/locations",
+        "url": "https://ghibliapi.dev/locations",
         "icon": "Locations_Default_45.png",
         "banner":"locations.png",
+        "placeholder":"placeHolder_Locations.png",
         "cardType":"Card",
         "filters": [
           {
@@ -440,9 +443,10 @@
       {
         "name": "species",
         "title":"Species",
-        "url": "https://ghibliapi.vercel.app/species",
+        "url": "https://ghibliapi.dev/species",
         "icon": "Species_Default_45.png",
         "banner":"species.png",
+        "placeholder":"placeHolder_Species.png",
         "cardType":"Card",
         "filters": [
           {

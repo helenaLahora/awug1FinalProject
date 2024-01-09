@@ -1,10 +1,14 @@
 /* HeaderCategory.css */
 
-.header-content {
+.banner {
     background-size: cover;
     display: flex;
-    width: 100vw;
     height: 90px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-left:60px;
+    padding-right:60px;
   }
   
   .arrow {
@@ -12,8 +16,7 @@
   }
   
   .category-info {
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  align-items: center;
+  gap: 20px;
   }  

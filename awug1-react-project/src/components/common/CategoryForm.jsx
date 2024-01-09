@@ -5,6 +5,7 @@ import { useCategory } from './CategoryContext';
 import arrowIcon from '../../assets/icons/Arrow_Default_30.png';
 import '../../assets/styles/CategoryForm.css';
 import JsonFile from '../../assets/information.json';
+import { useFilter } from './FilterContext';
 
 const ArrowIcon = React.memo(({ direction }) => (
   <img
@@ -12,13 +13,13 @@ const ArrowIcon = React.memo(({ direction }) => (
     alt={`Arrow ${direction}`}
     style={{
       transform: direction === 'left' ? 'rotate(180deg)' : 'none',
-      cursor: 'pointer',
     }}
   />
 ));
 
 const CategoryForm = ({ onCategoryChange }) => {
   const { categoryIndex, setCategoryIndex } = useCategory();
+  const { addFilter } = useFilter();
   const [dataRetrieved, setCurrentCategory] = useState(null);
 
   useEffect(() => {
@@ -54,6 +55,7 @@ const CategoryForm = ({ onCategoryChange }) => {
         ? 0
         : prevIndex + 1;
     });
+    addFilter({text: ''});
   };
 
   if (!dataRetrieved) {
@@ -64,7 +66,7 @@ const CategoryForm = ({ onCategoryChange }) => {
 
   return (
     <div
-      className="header-content"
+      className="banner"
       style={{
         backgroundImage: `url(${backgroundImage})`,
       }}

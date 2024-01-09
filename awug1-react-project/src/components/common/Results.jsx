@@ -1,24 +1,21 @@
 // Results.jsx
 
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useFilter } from './FilterContext';
 import JsonFile from '../../assets/information.json';
 import { useCategory } from '../common/CategoryContext';
+import Card from '../atomic/Card';
+import '../../assets/styles/Results.css'
 
-const ResultComponent = ({ onCategoryChange }) => {
+const Results = ({ onCategoryChange }) => {
   const { categoryIndex } = useCategory();
-  const { filters, addFilter } = useFilter();
-
+  const { filters } = useFilter();
   const [resultArray, setResultArray] = useState([]);
-
-  const resetFilters = useCallback(() => {
-    addFilter({ text: '' });
-  }, [addFilter]);
+  const placeHolder = require(`../../assets/placeholders/${JsonFile.endpoints?.[categoryIndex].placeholder}`)
+  console.log(placeHolder);
 
   // Function to apply filters to the data
   const applyFilters = (data, filters) => {
-
-    // Implement your filter logic here based on the filters array
     const filteredData = data.filter((item) => {
       const itemName = item && (item.name || item.title);
       return itemName && itemName.toLowerCase().includes(filters.text.toLowerCase());
@@ -30,14 +27,9 @@ const ResultComponent = ({ onCategoryChange }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        resetFilters(); // Reset filters when category changes
-
         const apiUrl = JsonFile.endpoints?.[categoryIndex].url;
         const response = await fetch(apiUrl);
         const data = await response.json();
-
-        console.log('Fetched data from API:', data);
-
         const filteredData = applyFilters(data, filters);
         setResultArray(filteredData);
       } catch (error) {
@@ -46,18 +38,15 @@ const ResultComponent = ({ onCategoryChange }) => {
     };
 
     fetchData();
-  }, [categoryIndex, filters, resetFilters]);
+  }, [categoryIndex, filters]);
 
   return (
-    <div>
-      {/* Render the results here based on the filtered array */}
-      <ul>
+    <div className="wrapper">
         {resultArray.map((item) => (
-          <li key={item.id}>{categoryIndex === 0 ? item.title : item.name}</li>
+        <Card key={item.id} title={item.title || item.name} originalTitle={item.original_title} image={item.image || placeHolder} />
         ))}
-      </ul>
     </div>
   );
 };
 
-export default ResultComponent;
+export default Results;
