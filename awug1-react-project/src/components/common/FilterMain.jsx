@@ -4,13 +4,12 @@ import { useFilter } from './FilterContext';
 import JsonFile from '../../assets/information.json';
 import { useCategory } from './CategoryContext';
 import '../../assets/styles/FilterMain.css';
+import FilterClean from '../common/FilterClean';
 
 const FilterMainInput = () => {
   const { addFilter } = useFilter();
   const { categoryIndex } = useCategory();
-
   const [inputValue, setInputValue] = useState('');
-
   const [inputProperties, setInputProperties] = useState({
     id: '',
     placeholder: '',
@@ -28,7 +27,6 @@ const FilterMainInput = () => {
         console.error('Error fetching input properties:', error);
       }
     };
-
     fetchData();
   }, [categoryIndex]);
 
@@ -52,6 +50,7 @@ const FilterMainInput = () => {
         onChange={handleInputChange}
       />
       <button onClick={handleAddFilter} className="Submit"></button>
+      <FilterClean></FilterClean>
     </div>
   );
 };

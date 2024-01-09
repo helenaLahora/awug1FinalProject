@@ -1,0 +1,20 @@
+.NoResultsWrapper{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.NoResultsMessage{
+    color: var(--Text-Default, #A6A494);
+    text-align: center;
+    font-family: Lora;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height:15px;
+    padding:0;
+    margin:0;
+}

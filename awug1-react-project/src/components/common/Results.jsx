@@ -1,11 +1,11 @@
 // Results.jsx
-
 import React, { useState, useEffect } from 'react';
 import { useFilter } from './FilterContext';
 import JsonFile from '../../assets/information.json';
 import { useCategory } from '../common/CategoryContext';
 import Card from '../atomic/Card';
 import '../../assets/styles/Results.css'
+import NoResults from '../atomic/NoResults'
 
 const Results = ({ onCategoryChange }) => {
   const { categoryIndex } = useCategory();
@@ -41,9 +41,13 @@ const Results = ({ onCategoryChange }) => {
 
   return (
     <div className="wrapperResults">
-        {resultArray.map((item) => (
-        <Card key={item.id} title={item.title || item.name} originalTitle={item.original_title} image={item.image || placeHolder} />
-        ))}
+      {resultArray.length > 0 ? (
+        resultArray.map((item) => (
+          <Card key={item.id} title={item.title || item.name} originalTitle={item.original_title} image={item.image || placeHolder} />
+        ))
+      ) : (
+        <NoResults />
+      )}
     </div>
   );
 };
