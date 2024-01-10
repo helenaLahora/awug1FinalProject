@@ -1,0 +1,25 @@
+.Submit{
+    display: flex;
+    width: 35px;
+    height: 35px;
+    padding:7px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background: #192D2B;
+    color: #E2E0C9;
+}
+
+.IconSubmit{
+    cursor:pointer;
+}
+
+.Submit:hover{
+    background: #82C7D9;
+    border:none;
+}
+
+.Submit:active{
+    outline: 3px solid #26B3D9;
+    background: #82C7D9;
+}

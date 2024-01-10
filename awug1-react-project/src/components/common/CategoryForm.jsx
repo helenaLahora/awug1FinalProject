@@ -41,20 +41,15 @@ const CategoryForm = ({ onCategoryChange }) => {
           : prevIndex === totalCategories - 1
           ? 0
           : prevIndex + 1;
-
-      console.log('New category index:', newIndex);
       return newIndex;
     });
   };
 
   if (!dataRetrieved) {
-    console.log('Data not retrieved yet.');
     return null;
   }
 
   const backgroundImage = require(`../../assets/categoriesBg/${dataRetrieved.banner}`);
-
-  console.log('Rendering CategoryForm:', dataRetrieved);
 
   return (
     <div

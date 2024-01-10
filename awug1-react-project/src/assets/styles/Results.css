@@ -1,8 +1,8 @@
 .wrapperResults{
     display: flex;
-    padding-top: 30px;
     gap: 5px;
     flex-wrap: wrap;
     margin:auto;
     justify-content: center;
+    min-height:500px;
 }

@@ -2,8 +2,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../../assets/styles/NavBar.css';
-import { ReactComponent as SearchIcon } from '../../assets/icons/Search.svg'; // Update the path
-import { ReactComponent as HomeIcon } from '../../assets/icons/Home.svg'; // Update the path
+import { ReactComponent as SearchIcon } from '../../assets/icons/Search.svg'; 
+import { ReactComponent as HomeIcon } from '../../assets/icons/Home.svg'; 
 import { ReactComponent as Ghibli } from '../../assets/logo/GhibliLogo.svg';
 
 /**

@@ -1,6 +1,6 @@
 .NavBar{
     display: flex;
-    padding: 35px 150px;
+    padding: 20px 150px;
     align-items: center;
     gap: 100px;
 }
@@ -50,7 +50,7 @@
 .Logo{
     cursor:pointer;
     color: var(--Text-Default, #192D2B);
-    width: 300px;
+    width: 200px;
 }
 
 .IconLinkHome{

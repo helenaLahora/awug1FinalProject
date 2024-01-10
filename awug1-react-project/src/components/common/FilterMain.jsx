@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import JsonFile from '../../assets/information.json';
 import { useCategory } from './CategoryContext';
 import { useFilter } from './FilterContext';
-import '../../assets/styles/FilterMain.css';
 
 const FilterMain = () => {
   const { categoryIndex } = useCategory();
@@ -40,7 +39,6 @@ const FilterMain = () => {
   };
 
   return (
-    <div className="wrapperFilterMain">
       <input
         type="text"
         id={inputProperties.id}
@@ -48,7 +46,6 @@ const FilterMain = () => {
         value={inputValue}
         onChange={handleInputChange}
       />
-    </div>
   );
 };
 

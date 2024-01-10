@@ -6,6 +6,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #E2E0C9;
+  scrollbar-color: #4CAF50 #f1f1f1;
+  scrollbar-width: thin;
 }
 
 code {
@@ -73,4 +75,18 @@ input[type="text"]::placeholder {
   font-style: italic;
   font-weight: 400;
   line-height: normal;
+}
+
+/* For WebKit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 10px; /* width of the scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #c4c2a9; /* color of the scrollbar thumb */
+  border-radius: 6px; /* round corners of the thumb */
+}
+
+::-webkit-scrollbar-track {
+  background-color: #c3c2b100; /* color of the scrollbar track */
 }

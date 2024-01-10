@@ -1,0 +1,27 @@
+.CleanFilters{
+    display: flex;
+    height: 35px;
+    padding:10px;
+    justify-content: center;
+    align-items: center;
+    border:none;
+    background: none;
+    color: #192D2B;
+    font-family: Raleway;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration-line: underline;
+}
+
+.CleanFilters:hover{
+    color: #82C7D9;
+    font-size: 14px;
+    cursor:pointer;
+}
+
+.CleanFilters:active{
+    color: #26B3D9;
+    cursor:pointer;
+}

@@ -1,5 +1,6 @@
 // components/common/Footer.jsx
 import React from 'react';
+import '../../assets/styles/Footer.css'
 
 /**
  * Footer component that serves as the bottom part of the application.
@@ -7,9 +8,9 @@ import React from 'react';
  */
 const Footer = () => {
   return (
-    <div>
+    <div className="wrapperFooter">
       {/* Add footer content as needed */}
-      <p>&copy;Helena Lahora & Yun Solá</p>
+      <p className="textFooter">&copy; Helena Lahora & Yun Solá :)</p>
     </div>
   );
 };

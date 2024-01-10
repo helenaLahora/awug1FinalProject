@@ -1,6 +1,8 @@
 // FilterSubmit.jsx
 import React from 'react';
 import { useFilter } from './FilterContext';
+import '../../assets/styles/FilterSubmit.css';
+import { ReactComponent as SearchIcon } from '../../assets/icons/Search.svg';
 
 const FilterSubmit = () => {
   const { submitFilters } = useFilter();
@@ -11,8 +13,8 @@ const FilterSubmit = () => {
   };
 
   return (
-    <button onClick={handleSubmit}>
-      Submit Filters
+    <button onClick={handleSubmit} className="Submit">
+          <SearchIcon className="IconSubmit" />
     </button>
   );
 };

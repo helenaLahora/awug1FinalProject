@@ -1,7 +1,7 @@
-.wrapper{
+.wrapperFilters{
     display: flex;
-    padding: 25px 0px;
-    flex-direction: column;
+    padding: 30px 150px 30px 150px;
     justify-content: center;
     align-items: center;
+    gap:15px;
 }
