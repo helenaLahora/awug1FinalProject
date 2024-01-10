@@ -5,7 +5,9 @@ import Footer from '../components/common/Footer';
 import Navbar from '../components/common/Navbar';
 import HeaderPage from '../components/common/HeaderPage';
 import FilterMainInput from '../components/common/FilterMain';
-import RenderResults from '../components/common/Results';
+import FilterSubmit from '../components/common/FilterSubmit';
+import FilterClean from '../components/common/FilterClean';
+import Results from '../components/common/Results';
 import { CategoryProvider } from '../components/common/CategoryContext';
 import { FilterProvider } from '../components/common/FilterContext';
 
@@ -17,8 +19,10 @@ const Search = () => {
           <Navbar />
           <HeaderPage title={"Discover the Ghibli Universe"}/>
           <HeaderForm />
+          <FilterSubmit/>
+          <FilterClean/>
           <FilterMainInput />
-          <RenderResults />
+          <Results />
           <Footer />
         </div>
       </FilterProvider>

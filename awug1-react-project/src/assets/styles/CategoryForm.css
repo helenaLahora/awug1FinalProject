@@ -14,6 +14,12 @@
   .Arrow {
     cursor: pointer;
   }
+  .Arrow:hover{
+    color: var(--State-Hover, #82C7D9);
+  }
+  .Arrow:active{
+    color: var(--state-cta-active, #26B3D9);
+  }
   
   .CategoryInfo {
   display: flex;

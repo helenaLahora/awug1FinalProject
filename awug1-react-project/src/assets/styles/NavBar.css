@@ -13,25 +13,6 @@
     flex: 1 0 0;
 }
 
-.Icon{
-    cursor:pointer;
-    color: var(--Text-Default, #192D2B);
-}
-
-.Icon:before {
-    background-image: url('../logo/GhibliLogo.svg');
-    color: var(--Text-Default, #192D2B);
-    background-size:auto; /* Change from 'cover' to 'contain' */
-    width: 307px; /* Adjust the width as needed */
-    height: 30px; /* Adjust the height as needed */
-    margin-right: 5px;
-    position: relative;
-    top: 3px;
-    content: "";
-    display: inline-block;
-}
-
-
 .HomeLink{
     color: var(--Text-Default, #192D2B);
     font-family: Lora;
@@ -40,19 +21,13 @@
     font-weight: 500;
     line-height: normal;
     text-decoration: none;
-}
-
-.HomeLink:before{
-    background-image: url('../icons/Home.svg');
-    background-size: cover;
-    width: 25px;
-    height: 25px;
-    margin-right: 5px;
-    position: relative;
-    top: 3px;
-    content: "";
-    display: inline-block;
-    fill:hsba(174, 44%, 18%, 1);
+    display: flex;
+    width: 100px;
+    height: 60px;
+    padding: 5px 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
 }
 
 .SearchLink{
@@ -63,17 +38,75 @@
     font-weight: 500;
     line-height: normal;
     text-decoration: none;
+    display: flex;
+    width: 100px;
+    height: 60px;
+    padding: 5px 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
 }
 
-.SearchLink:before{
-    background-image: url('../icons/Search.svg');
-    background-size: contain;
+.Logo{
+    cursor:pointer;
+    color: var(--Text-Default, #192D2B);
+    width: 300px;
+}
+
+.IconLinkHome{
+    cursor:pointer;
+    width: 25px;
+    height: 25px;
+}
+
+.IconLinkSearch{
+    cursor:pointer;
     width: 22px;
     height: 22px;
-    margin-right: 5px;
-    position: relative;
-    top: 2px;
-    content: "";
-    display: inline-block;
-    fill:hsba(174, 44%, 18%, 1);
+}
+
+.HomeLink:hover{
+    color: var(--State-Hover, #82C7D9);
+}
+
+.SearchLink:hover{
+    color: var(--State-Hover, #82C7D9);
+}
+
+.Logo:hover{
+    color: var(--State-Hover, #82C7D9);
+}
+
+.HomeLink:hover > .IconLinkHome{
+    color: var(--State-Hover, #82C7D9);
+}
+
+.SearchLink:hover > .IconLinkSearch{
+    color: var(--State-Hover, #82C7D9);
+}
+
+.HomeLink:active{
+    color: var(--state-cta-active, #26B3D9);
+    text-decoration-line: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 2px;
+}
+
+.SearchLink:active{
+    color: var(--state-cta-active, #26B3D9);
+    text-decoration-line: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 2px;
+}
+
+.Logo:active{
+    color: var(--state-cta-active, #26B3D9);
+}
+
+.HomeLink:active > .IconLinkHome{
+    color: var(--state-cta-active, #26B3D9);
+}
+
+.SearchLink:active > .IconLinkSearch{
+    color: var(--state-cta-active, #26B3D9);
 }

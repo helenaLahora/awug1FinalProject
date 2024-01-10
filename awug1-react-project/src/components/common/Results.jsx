@@ -4,23 +4,21 @@ import { useFilter } from './FilterContext';
 import JsonFile from '../../assets/information.json';
 import { useCategory } from '../common/CategoryContext';
 import Card from '../atomic/Card';
-import '../../assets/styles/Results.css'
-import NoResults from '../atomic/NoResults'
+import '../../assets/styles/Results.css';
+import NoResults from '../atomic/NoResults';
 
-const Results = ({ onCategoryChange }) => {
+const Results = () => {
   const { categoryIndex } = useCategory();
   const { filters } = useFilter();
+  const placeHolder = require(`../../assets/placeholders/${JsonFile.endpoints?.[categoryIndex].placeholder}`);
   const [resultArray, setResultArray] = useState([]);
-  const placeHolder = require(`../../assets/placeholders/${JsonFile.endpoints?.[categoryIndex].placeholder}`)
 
-  // Function to apply filters to the data
+  // Define the applyFilters function
   const applyFilters = (data, filters) => {
-    const filteredData = data.filter((item) => {
+    return data.filter((item) => {
       const itemName = item && (item.name || item.title);
       return itemName && itemName.toLowerCase().includes(filters.text.toLowerCase());
     });
-
-    return filteredData;
   };
 
   useEffect(() => {
@@ -38,6 +36,16 @@ const Results = ({ onCategoryChange }) => {
 
     fetchData();
   }, [categoryIndex, filters]);
+
+  useEffect(() => {
+    // Update resultArray when filters change
+    const updateFilteredData = () => {
+      const filteredData = applyFilters(resultArray, filters);
+      setResultArray(filteredData);
+    };
+
+    updateFilteredData();
+  }, [filters]);
 
   return (
     <div className="wrapperResults">

@@ -14,7 +14,14 @@ export const FilterProvider = ({ children }) => {
     addFilter({ text: '' });
   };
 
-  const contextValue = { filters, addFilter, handleFiltersClean };
+  const submitFilters = () => {
+    // Pass the filters array to the Results component
+    // Note: You might want to add more logic or send the filters to a parent component that manages the data fetching
+    // For simplicity, I'm directly setting filters in a state here.
+    setFilters(filters);
+  };
+
+  const contextValue = { filters, addFilter, handleFiltersClean, submitFilters };
 
   return (
     <FilterContext.Provider value={contextValue}>
