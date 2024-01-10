@@ -1,25 +1,28 @@
-// FilterMainInput.jsx
+// FilterMain.jsx
 import React, { useState, useEffect } from 'react';
 import JsonFile from '../../assets/information.json';
 import { useCategory } from './CategoryContext';
+import { useFilter } from './FilterContext';
 import '../../assets/styles/FilterMain.css';
 
-const FilterMainInput = () => {
+const FilterMain = () => {
   const { categoryIndex } = useCategory();
+  const { addFilter, submittedFilters } = useFilter();
   const [inputValue, setInputValue] = useState('');
   const [inputProperties, setInputProperties] = useState({
     id: '',
     placeholder: '',
-    value: '',
-    onChange: '',
   });
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const selectedProperties = JsonFile.endpoints?.[categoryIndex].filters[0].inputs[0];
+        const selectedProperties = JsonFile.endpoints?.[categoryIndex]?.filters[0]?.inputs[0];
 
-        setInputProperties(selectedProperties);
+        if (selectedProperties) {
+          setInputProperties(selectedProperties);
+          setInputValue('');
+        }
       } catch (error) {
         console.error('Error fetching input properties:', error);
       }
@@ -28,7 +31,12 @@ const FilterMainInput = () => {
   }, [categoryIndex]);
 
   const handleInputChange = (event) => {
-    setInputValue(event.target.value);
+    const value = event.target.value;
+    setInputValue(value);
+
+    if (!submittedFilters) {
+      addFilter({ text: value });
+    }
   };
 
   return (
@@ -44,4 +52,4 @@ const FilterMainInput = () => {
   );
 };
 
-export default FilterMainInput;
+export default FilterMain;

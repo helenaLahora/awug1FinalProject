@@ -5,12 +5,13 @@ import { useFilter } from './FilterContext';
 const FilterSubmit = () => {
   const { submitFilters } = useFilter();
 
-  const handleClick = () => {
-    submitFilters(); // Call the submitFilters function from the FilterContext
+  const handleSubmit = () => {
+    // Add any logic related to submitting filters
+    submitFilters();
   };
 
   return (
-    <button onClick={handleClick} className="Submit">
+    <button onClick={handleSubmit}>
       Submit Filters
     </button>
   );

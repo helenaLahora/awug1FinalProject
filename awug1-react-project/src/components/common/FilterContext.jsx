@@ -1,27 +1,31 @@
 // FilterContext.jsx
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react';
 
 const FilterContext = createContext();
 
 export const FilterProvider = ({ children }) => {
   const [filters, setFilters] = useState({ text: '' });
+  const [submittedFilters, setSubmittedFilters] = useState(false);
 
   const addFilter = (filter) => {
     setFilters((prevFilters) => ({ ...prevFilters, ...filter }));
+    setSubmittedFilters(false); // Reset submittedFilters whenever filters change
   };
 
   const handleFiltersClean = () => {
-    addFilter({ text: '' });
+    setFilters({ text: '' });
+    setSubmittedFilters(false); // Reset submittedFilters when filters are cleaned
   };
 
   const submitFilters = () => {
-    // Pass the filters array to the Results component
-    // Note: You might want to add more logic or send the filters to a parent component that manages the data fetching
-    // For simplicity, I'm directly setting filters in a state here.
-    setFilters(filters);
+    setSubmittedFilters(true);
   };
 
-  const contextValue = { filters, addFilter, handleFiltersClean, submitFilters };
+  useEffect(() => {
+    // Add any necessary side effects related to filters or their submission
+  }, [filters, submittedFilters]);
+
+  const contextValue = { filters, addFilter, handleFiltersClean, submitFilters, submittedFilters };
 
   return (
     <FilterContext.Provider value={contextValue}>
@@ -38,9 +42,14 @@ const useFilter = () => {
   return context;
 };
 
+const useSubmittedFilters = () => {
+  const { submittedFilters } = useFilter();
+  return submittedFilters;
+};
+
 const useFiltersClean = () => {
   const { handleFiltersClean } = useFilter();
   return handleFiltersClean;
 };
 
-export { useFilter, useFiltersClean };
+export { useFilter, useFiltersClean, useSubmittedFilters };
