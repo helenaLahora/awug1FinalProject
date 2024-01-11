@@ -1,10 +1,12 @@
-.NoResultsWrapper{
+.NoResultsWrapper {
     display: flex;
-    height: 100%;
-    flex-direction: column;
+    gap: 5px;
+    flex-wrap: wrap;
+    margin: auto;
     justify-content: center;
+    min-height: 500px;
     align-items: center;
-    gap: 50px;
+    flex-direction: column;
 }
 
 .NoResultsMessage{
