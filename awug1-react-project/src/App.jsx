@@ -3,7 +3,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from '../src/views/Home';
 import Search from '../src/views/Search';
-import Detail from '../src/views/Detail';
+import DetailView from '../src/views/DetailView';
 import './index.css';
 
 // Import CategoryProvider and FilterProvider from the correct paths
@@ -17,11 +17,8 @@ function App() {
         <Router>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route
-              path="/search"
-              element={<Search />}
-            />
-            <Route path="/:id" element={<Detail />} />
+            <Route path="/search" element={<Search />} />
+            <Route path="/:id" element={<DetailView />} />
           </Routes>
         </Router>
       </FilterProvider>

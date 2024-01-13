@@ -1,6 +1,6 @@
 // FilterClean.jsx
 import React from 'react';
-import { useFiltersClean } from './FilterContext';
+import { useFiltersClean } from '../common/FilterContext';
 import '../../assets/styles/FilterClean.css';
 
 const FilterClean = () => {

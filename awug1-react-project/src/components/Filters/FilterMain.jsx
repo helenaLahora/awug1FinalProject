@@ -1,8 +1,8 @@
 // FilterMain.jsx
 import React, { useState, useEffect } from 'react';
 import JsonFile from '../../assets/information.json';
-import { useCategory } from './CategoryContext';
-import { useFilter } from './FilterContext';
+import { useCategory } from '../common/CategoryContext';
+import { useFilter } from '../common/FilterContext';
 
 const FilterMain = () => {
   const { categoryIndex } = useCategory();

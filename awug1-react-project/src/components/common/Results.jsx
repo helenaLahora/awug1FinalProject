@@ -34,16 +34,23 @@ const Results = () => {
         console.error('Error fetching data:', error);
       }
     };
-
+  
     fetchData();
-  }, [categoryIndex, filters, submittedFilters]);
+  }, [categoryIndex, filters, submittedFilters, resultArray]);
 
   return (
     <div className="wrapperResults">
       {resultArray.length > 0 ? (
-        resultArray.map((item) => (
-          <Card key={item.id} title={item.title || item.name} originalTitle={item.original_title} image={item.image || placeHolder} />
-        ))
+          resultArray.map((item) => (
+              <Card
+                key={item.id}
+                title={item.title || item.name}
+                originalTitle={item.original_title}
+                image={item.image || placeHolder}
+                id={item.id}
+                categoryIndex={categoryIndex}
+              />
+          ))
       ) : (
         <NoResults />
       )}

@@ -4,7 +4,7 @@ import CategoryForm from '../components/common/CategoryForm';
 import Footer from '../components/common/Footer';
 import Navbar from '../components/common/Navbar';
 import HeaderPage from '../components/common/HeaderPage';
-import FilterContainer from '../components/common/FilterContainer';
+import FilterContainer from '../components/Filters/FilterContainer';
 import Results from '../components/common/Results';
 import { CategoryProvider } from '../components/common/CategoryContext';
 import { FilterProvider } from '../components/common/FilterContext';
