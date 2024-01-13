@@ -9,7 +9,6 @@ const Card = ({ title, image, originalTitle, id, categoryIndex }) => {
   const navigate = useNavigate();
 
   const handleCardClick = () => {
-    console.log("Card | id:", id, "categoryIndex:", categoryIndex);
     navigate(`/${id}`, { state: { categoryIndex, itemId: id } });
   };
 
