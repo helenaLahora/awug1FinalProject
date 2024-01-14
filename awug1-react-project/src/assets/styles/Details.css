@@ -1,0 +1,248 @@
+.DetailsContainer{
+    display: flex;
+    padding: 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+.DetailsHeader{
+    display: flex;
+    padding: 30px 150px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width:79.8vw;
+    background-size: cover;
+}
+
+.DetailsTitle{
+    color: var(--Text-Default, #192D2B);
+    text-align: center;
+    font-family: Lora;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding:0;  
+    margin:0;
+}
+
+.DetailsTitleOriginal{
+    color: var(--Text-Default, #192D2B);
+    text-align: center;
+    font-family: Raleway;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal; 
+    padding:0;  
+    margin:0;   
+}
+
+.DetailsRomanised{
+    color: var(--Text-Default, #192D2B);
+    text-align: center;
+    font-family: Raleway;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding:0;  
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.DetailsData{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    align-self: stretch;
+}
+
+.DetailsImg {
+    width: 360px;
+    height: 540px;
+    border-radius: 15px;
+    border: 2px solid var(--Form-Medium, #A6A494);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+.DetailsColumn{
+    display: flex;
+    height: 540px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.DetailsProperties{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    align-self: stretch;    
+}
+
+.DetailProperty{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding:0;
+}
+
+.DetailsPropertiesIcon{
+    width: 30px;
+    height: 30px;    
+    color: var(--Text-Default, #192D2B);
+    padding:0;  
+    margin:0;
+}
+
+.DetailsPropertyText{
+    color: var(--Text-Default, #192D2B);
+    text-align: center;
+    font-family: Raleway;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;  
+    padding:0;  
+    margin:0;
+}
+
+.DetailsDescription{
+    color: var(--Text-Default, #192D2B);
+    text-align: justify;
+    font-family: Raleway;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;    
+    width:700px;
+    flex-shrink: 0;
+    align-self: stretch;
+    padding:0;  
+    margin:0;
+}
+
+.DetailsFeatured{
+    display: flex;
+    padding: 0px 150px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    align-self: stretch;
+}
+
+.DetailsFeaturedCategory{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    align-self: stretch;
+    height:200px;
+}
+
+.DetailsFeaturedCategoryTitle{
+    color: var(--Text-Default, #192D2B);
+    text-align: center;
+    font-family: Raleway;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin:0;
+    padding:0;
+}
+
+.DetailsFeaturedCategoryItems{
+    display: flex;
+    align-items: flex-start;  
+    width:79.8vw;
+    overflow-x:scroll;  
+    overflow-y:hidden;  
+}
+
+.DetailsFeaturedCategoryItem {
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    width: 150px;
+    transition: transform 0.2s ease-in-out; /* Add a smooth transition effect */
+
+    /* Initial styles for normal state */
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.DetailsFeaturedCategoryItem:hover {
+    cursor: pointer;
+}
+
+.DetailsFeaturedCategoryItem:active {
+    cursor: pointer;
+}
+
+.DetailsFeaturedCategoryItemImage {
+    width: 60px;
+    height: 60px;
+    border-radius: 100px;
+    object-fit: cover;
+    border: 1px solid var(--Form-Medium, #A6A494);
+}
+
+.DetailsFeaturedCategoryItemTitle {
+    color: var(--Form-Dark, #737267);
+    text-align: center;
+    font-family: Raleway;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    /* Initial styles for normal state */
+    transition: color 0.2s ease-in-out; /* Add a smooth transition effect */
+}
+
+.DetailsFeaturedCategoryItem:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .DetailsFeaturedCategoryItem:hover>.DetailsFeaturedCategoryItemImage  {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border: 3px solid #82C7D9;
+    cursor:pointer;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .DetailsFeaturedCategoryItem:hover>.DetailsFeaturedCategoryItemTitle {
+    color: #82C7D9;
+    cursor:pointer;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .DetailsFeaturedCategoryItem:active {
+    transform: scale(1) translateY(2px);
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .DetailsFeaturedCategoryItem:active > .DetailsFeaturedCategoryItemImage  {
+    cursor: pointer;
+    border: 3px solid #26B3D9;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .DetailsFeaturedCategoryItem:active > .title{
+    color: #26B3D9;
+    transition: transform 0.5s ease-in-out;
+  }

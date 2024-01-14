@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import JsonFile from '../../assets/information.json';
 import DetailsProperty from './DetailsProperty';
 import DetailsRelatedCategory from './DetailsRelatedCategory';
+import '../../assets/styles/Details.css';
 
 const DetailsItems = ({ category, itemId }) => {
   const [details, setDetails] = useState(null);
@@ -30,55 +31,46 @@ const DetailsItems = ({ category, itemId }) => {
   }
 
   const headerStyle = {
-    background: `url(${details.movie_banner})`,
+    backgroundImage: `linear-gradient(rgba(226, 224, 201, 0.75), rgba(226, 224, 201, 0.75)), url(${details.movie_banner})`,
     backgroundSize: 'cover',
-    objectfit: 'contain',
-    backgroundPosition: 'center',
-    height: '200px',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    color: 'white',
-    textAlign: 'center',
+    backgroundRepeat: 'no-repeat',
   };
-
+  
   const imgStyle = {
-    background: details.image ? `url(${details.image})` : `url(${placeHolder}), cover no-repeat`,
-    objectFit: 'fill',
-    width: '125px',
-    height: '215px',
-    borderradius: '5px',
-    transition: 'transform 0.5s ease-in-out',
-    backgroundSize: 'cover no-repeat',
-    border: '1px solid #A6A494',
+    backgroundImage: details.image ? `url(${details.image})` : `url(${placeHolder})`,
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
   };
+  
 
   return (
-    <div className="details-container">
-      <div className="details-header" style={headerStyle}>
-        {details.title && <h2>{details.title}</h2>}
-        {details.name && <h2>{details.name}</h2>}
-        {details.original_title && <p>{details.original_title}</p>}
-        {details.original_title_romanised && <p>{details.original_title_romanised}</p>}        
+    <div className="DetailsContainer">
+      <div className="DetailsHeader" style={headerStyle}>
+        {details.title && <h2 className="DetailsTitle">{details.title}</h2>}
+        {details.name && <h2 className="DetailsTitle" >{details.name}</h2>}
+        {details.original_title && <p className="DetailsTitleOriginal">{details.original_title}</p>}
+        {details.original_title_romanised && <p className="DetailsTitleRomanised" style={{ marginTop: '0px', marginBottom: '0px' }}>{details.original_title_romanised}</p>}
+
       </div>
-      <div className="details-data">
-        <div className="details-img" style={imgStyle}></div>
-        <div className="details-description">
-            {details.description && <p>{details.description}</p>}
-          </div>
-        <div className="details-properties">
-          {Object.entries(details).map(([key, value]) =>
-            !['id', 'image','name', 'title', 'original_title', 'original_title_romanised', 'movie_banner', 'url', 'description'].includes(
-              key
-            ) &&
-            !Array.isArray(value) ? (
-              <DetailsProperty key={key} propertyName={key} propertyData={value} />
-            ) : null
-          )}
+      <div className="DetailsData">
+        <div className="DetailsImg" style={imgStyle}></div>
+        <div className="DetailsColumn">
+            <div className="DetailsProperties">
+              {Object.entries(details).map(([key, value]) =>
+                !['id', 'image','name', 'title', 'original_title', 'original_title_romanised', 'movie_banner', 'url', 'description'].includes(
+                  key
+                ) &&
+                !Array.isArray(value) ? (
+                  <DetailsProperty key={key} propertyName={key} propertyData={value} />
+                ) : null
+              )}
+            </div>
+            <div className="DetailsDescription">
+                {details.description && <p>{details.description}</p>}
+            </div>
         </div>
       </div>
-      <div className="details-featured">
+      <div className="DetailsFeatured">
         {Object.entries(details).map(([key, value]) =>
           Array.isArray(value) ? (
             <DetailsRelatedCategory key={key} category={{ name: key, items: value }} />

@@ -1,7 +1,8 @@
-// DetailsRelatedCategoryItem.jsx
-import React, { useEffect, useState } from 'react';
+// DetailsProperty.jsx
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import JsonFile from '../../assets/information.json';
+import '../../assets/styles/Details.css';
 
 const DetailsRelatedCategoryItem = ({ category, url }) => {
   const [itemDetails, setItemDetails] = useState(null);
@@ -53,24 +54,28 @@ const DetailsRelatedCategoryItem = ({ category, url }) => {
       ? require(`../../assets/placeholders/${placeHolderPath}`)
       : null;
 
-  const handleCardClick = () => {
+  const handleItemcClick = () => {
     navigate(`/${id}`, { state: { categoryIndex, itemId: id } });
   };
 
   return (
-    <div onClick={handleCardClick}>
+    <div onClick={handleItemcClick}>
       {itemDetails && itemDetails.id && (
-        <div>
-          <h4>{itemDetails.title || itemDetails.name}</h4>
+        <div className="DetailsFeaturedCategoryItem">
           {itemDetails.image ? (
             <img
+              className="DetailsFeaturedCategoryItemImage"
               src={itemDetails.image}
               alt={itemDetails.title || itemDetails.name}
-              style={{ maxWidth: '100%', height: '100px' }}
             />
           ) : placeHolder ? (
-            <img src={placeHolder} alt="Placeholder" style={{ maxWidth: '100%', height: '100px', cursor:'pointer'}} />
+            <img
+            className="DetailsFeaturedCategoryItemImage"
+            src={placeHolder}
+            alt="Placeholder"/>
           ) : null}
+
+          <h4 className="DetailsFeaturedCategoryItemTitle" style={{ marginTop: '0px', marginBottom: '0px' }} >{itemDetails.title || itemDetails.name}</h4>
         </div>
       )}
     </div>

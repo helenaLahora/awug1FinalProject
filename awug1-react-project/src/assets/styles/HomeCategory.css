@@ -1,0 +1,34 @@
+.wrapperCategory{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 150px;
+    padding:0;
+    gap:5px;
+    margin-top:50px;
+}
+
+.categoryTitle{
+    color: var(--Text-Default, #192D2B);
+text-align: center;
+font-family: Lora;
+font-size: 50px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+margin:0;
+}
+
+.cardWrapper{
+    display: flex;
+    gap: 5px;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    width: 78.5vw;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    height: 300px;
+    justify-content: flex-start;
+}

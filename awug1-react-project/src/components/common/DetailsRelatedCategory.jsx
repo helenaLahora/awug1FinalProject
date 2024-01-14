@@ -1,6 +1,7 @@
 // DetailsRelatedCategory.jsx
 import React from 'react';
 import DetailsRelatedCategoryItem from './DetailsRelatedCategoryItem';
+import '../../assets/styles/Details.css';
 
 const DetailsRelatedCategory = ({ category }) => {
 
@@ -35,11 +36,13 @@ const DetailsRelatedCategory = ({ category }) => {
   const capitalizedCategoryName = category.name.charAt(0).toUpperCase() + category.name.slice(1);
 
   return (
-    <div>
-      {validItems.length > 0 && <h3>{capitalizedCategoryName}</h3>}
-      {validItems.map((itemUrl, index) => (
-        <DetailsRelatedCategoryItem key={index} category={category.name} url={itemUrl} />
-      ))}
+    <div className="DetailsFeaturedCategory">
+      {validItems.length > 0 && <h3 className="DetailsFeaturedCategoryTitle" >{capitalizedCategoryName}</h3>}
+      <div className="DetailsFeaturedCategoryItems">
+        {validItems.map((itemUrl, index) => (
+          <DetailsRelatedCategoryItem key={index} category={category.name} url={itemUrl} />
+        ))}        
+      </div>
     </div>
   );
 };
