@@ -1,6 +1,6 @@
 // FilterAdditionalInput.jsx
 import React, { useState } from 'react';
-import { useFilter } from '../filters/FilterContext';
+import { useFilter } from './FilterContext';
 
 /**
  * FilterAdditionalInput Component
