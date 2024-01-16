@@ -7,15 +7,25 @@ import { ReactComponent as HomeIcon } from '../../assets/icons/Home.svg';
 import { ReactComponent as Ghibli } from '../../assets/logo/GhibliLogo.svg';
 
 /**
- * Navbar component for navigation between different views.
- * Uses react-router-dom's Link component for routing.
+ * Navbar Component
+ * 
+ * Main Goal/Task: Provides navigation between different views using react-router-dom's Link component.
+ * 
+ * Component Structure:
+ * - Renders a wrapper div with the class "NavBar".
+ * - Displays the Ghibli logo as a Link to the home view.
+ * - Uses react-router-dom's Link component for routing to the home and search views.
+ * 
+ * @returns {JSX.Element} - The Navbar component.
  */
 const Navbar = () => {
   return (
     <div className="NavBar">
+      {/* Link to the home view with Ghibli logo */}
       <Link to="/">
         <Ghibli className="Logo" />
       </Link>
+      {/* Navigation links using react-router-dom's Link component */}
       <nav className="Router">
         <Link to="/" className="HomeLink">
           <HomeIcon className="IconLinkHome" />

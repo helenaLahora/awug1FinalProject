@@ -1,15 +1,20 @@
 // components/common/Footer.jsx
 import React from 'react';
-import '../../assets/styles/Footer.css'
+import '../../assets/styles/Footer.css';
 
 /**
- * Footer component that serves as the bottom part of the application.
- * Typically contains copyright information or other details.
+ * Footer Component
+ * 
+ * Main Goal/Task: Represents the bottom part of the application, usually containing copyright information or other details.
+ * 
+ * Component Structure:
+ * - Renders a wrapper div with the class "wrapperFooter".
+ * - Displays the copyright information inside a paragraph with the class "textFooter".
  */
 const Footer = () => {
   return (
     <div className="wrapperFooter">
-      {/* Add footer content as needed */}
+      {/* Copyright information or other details */}
       <p className="textFooter">&copy; Helena Lahora & Yun Solá :)</p>
     </div>
   );

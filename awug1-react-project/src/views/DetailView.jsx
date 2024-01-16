@@ -2,23 +2,38 @@
 import React from 'react';
 import Footer from '../components/common/Footer';
 import Navbar from '../components/common/Navbar';
-import DetailsItems from '../components/common/DetailsItem';
+import DetailsItem from '../components/details/DetailsItem';
 import { useLocation } from 'react-router-dom';
 
 /**
- * Detail view that displays detailed information about a specific item.
+ * DetailView Component
+ * 
+ * Main Goal/Task: Displays detailed information about a specific item.
+ * 
+ * Component Structure:
+ * - Utilizes React hooks for location to access state information.
+ * - Renders Navbar, DetailsItems, and Footer components.
+ * - Passes categoryIndex and itemId to DetailsItems component based on the state.
+ * 
+ * @returns {JSX.Element} - The DetailView component.
  */
 const DetailView = () => {
+  // Get location and state from react-router-dom
   const location = useLocation();
   const { state } = location;
 
-  // Access categoryIndex and itemId from state
+  // Destructure categoryIndex and itemId from state (if available)
   const { categoryIndex, itemId } = state || {};
 
   return (
     <div>
+      {/* Render Navbar component */}
       <Navbar />
-      <DetailsItems category={categoryIndex} itemId={itemId} />
+      
+      {/* Render DetailsItem component with categoryIndex and itemId */}
+      <DetailsItem category={categoryIndex} itemId={itemId} />
+      
+      {/* Render Footer component */}
       <Footer />
     </div>
   );

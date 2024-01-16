@@ -1,6 +1,6 @@
 // FilterSubmit.jsx
 import React from 'react';
-import { useFilter } from '../common/FilterContext';
+import { useFilter } from './FilterContext';
 import '../../assets/styles/FilterSubmit.css';
 import { ReactComponent as SearchIcon } from '../../assets/icons/Search.svg';
 
